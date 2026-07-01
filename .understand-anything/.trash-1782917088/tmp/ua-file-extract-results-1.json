@@ -1,0 +1,607 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "dask/docker-compose.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 31,
+      "nonEmptyLines": 31,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "dask/notebooks/Lecture1_solutions.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2642,
+      "nonEmptyLines": 2642,
+      "metrics": {}
+    },
+    {
+      "path": "dask/notebooks/Lecture1.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2567,
+      "nonEmptyLines": 2567,
+      "metrics": {}
+    },
+    {
+      "path": "dask/notebooks/Lecture2_solutions.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 4657,
+      "nonEmptyLines": 4657,
+      "metrics": {}
+    },
+    {
+      "path": "dask/notebooks/Lecture2.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 3503,
+      "nonEmptyLines": 3503,
+      "metrics": {}
+    },
+    {
+      "path": "dask/notebooks/Lecture3_solutions.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 15218,
+      "nonEmptyLines": 15218,
+      "metrics": {}
+    },
+    {
+      "path": "dask/notebooks/Lecture3.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 1191,
+      "nonEmptyLines": 1191,
+      "metrics": {}
+    },
+    {
+      "path": "dask/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 80,
+      "nonEmptyLines": 49,
+      "sections": [
+        {
+          "heading": "Dask module",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Docker",
+          "level": 3,
+          "line": 3
+        },
+        {
+          "heading": "Docker compose",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Shutting down the Docker compose \"cluster\"",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Pre-requisites",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "Lecture 1",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "Lecture 2",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Lecture 3",
+          "level": 2,
+          "line": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "kafka/docker-compose.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 44,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "kafka/notebooks/Consumer.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 525,
+      "nonEmptyLines": 525,
+      "metrics": {}
+    },
+    {
+      "path": "kafka/notebooks/ConsumerGroup.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 119,
+      "metrics": {}
+    },
+    {
+      "path": "kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 420,
+      "nonEmptyLines": 420,
+      "metrics": {}
+    },
+    {
+      "path": "kafka/notebooks/Producer.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 529,
+      "nonEmptyLines": 529,
+      "metrics": {}
+    },
+    {
+      "path": "kafka/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 79,
+      "nonEmptyLines": 49,
+      "sections": [
+        {
+          "heading": "Kafka module",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Docker",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Docker compose",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Shutting down the Docker compose \"cluster\"",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "Pre-requisites",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "Lecture",
+          "level": 2,
+          "line": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "mysql/docker-compose.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 21,
+      "nonEmptyLines": 19,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "mysql/docker/mapd_notebook.Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 19,
+      "metrics": {}
+    },
+    {
+      "path": "mysql/notebooks/MySQL_solutions.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 20231,
+      "nonEmptyLines": 20231,
+      "metrics": {}
+    },
+    {
+      "path": "mysql/notebooks/MySQL.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2786,
+      "nonEmptyLines": 2786,
+      "metrics": {}
+    },
+    {
+      "path": "mysql/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 54,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "SQL module",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Docker",
+          "level": 3,
+          "line": 3
+        },
+        {
+          "heading": "Docker compose",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Shutting down the Docker compose \"cluster\"",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "Pre-requisites",
+          "level": 3,
+          "line": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "parallel/00_single_threaded.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "my_sum",
+          "startLine": 4,
+          "endLine": 9,
+          "params": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum",
+          "callee": "range",
+          "lineNumber": 7
+        },
+        {
+          "caller": "my_sum",
+          "callee": "print",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/01_multi_threaded.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "my_sum",
+          "startLine": 5,
+          "endLine": 10,
+          "params": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum",
+          "callee": "range",
+          "lineNumber": 8
+        },
+        {
+          "caller": "my_sum",
+          "callee": "print",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/02_multi_threaded_local_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "my_sum",
+          "startLine": 6,
+          "endLine": 16,
+          "params": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum",
+          "callee": "threading.local",
+          "lineNumber": 11
+        },
+        {
+          "caller": "my_sum",
+          "callee": "range",
+          "lineNumber": 14
+        },
+        {
+          "caller": "my_sum",
+          "callee": "print",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/03_multi_threaded_nolock.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "startLine": 7,
+          "endLine": 29,
+          "params": [
+            "a",
+            "b",
+            "m"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum_mod",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum_mod",
+          "callee": "threading.local",
+          "lineNumber": 19
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "range",
+          "lineNumber": 22
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "COMMON_LIST.append",
+          "lineNumber": 27
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "print",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/03extra_minimal_race_condition.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "increment",
+          "startLine": 5,
+          "endLine": 8,
+          "params": [
+            "max_val"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "increment",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "increment",
+          "callee": "range",
+          "lineNumber": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/04_multi_threaded_lock.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "startLine": 7,
+          "endLine": 38,
+          "params": [
+            "the_lock",
+            "a",
+            "b",
+            "m"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum_mod",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum_mod",
+          "callee": "threading.local",
+          "lineNumber": 19
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "range",
+          "lineNumber": 22
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "the_lock.acquire",
+          "lineNumber": 26
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "COMMON_LIST.append",
+          "lineNumber": 31
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "the_lock.release",
+          "lineNumber": 36
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "print",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

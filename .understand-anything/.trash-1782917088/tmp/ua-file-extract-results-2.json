@@ -1,0 +1,1128 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "parallel/04extra_minimal_race_condition_with_lock.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "increment",
+          "startLine": 5,
+          "endLine": 10,
+          "params": [
+            "max_val"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "increment",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "increment",
+          "callee": "range",
+          "lineNumber": 7
+        },
+        {
+          "caller": "increment",
+          "callee": "lock.acquire",
+          "lineNumber": 8
+        },
+        {
+          "caller": "increment",
+          "callee": "lock.release",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/05_multi_threaded_pool_lock.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "startLine": 8,
+          "endLine": 34,
+          "params": [
+            "the_lock",
+            "a",
+            "b",
+            "m"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum_mod",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum_mod",
+          "callee": "threading.local",
+          "lineNumber": 20
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "range",
+          "lineNumber": 23
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "the_lock.acquire",
+          "lineNumber": 26
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "COMMON_LIST.append",
+          "lineNumber": 28
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "the_lock.release",
+          "lineNumber": 29
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "print",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/06_multi_threaded_pool_queue.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "startLine": 8,
+          "endLine": 39,
+          "params": [
+            "the_queue",
+            "a",
+            "b",
+            "m"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum_mod",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum_mod",
+          "callee": "threading.local",
+          "lineNumber": 20
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "range",
+          "lineNumber": 23
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "the_queue.put",
+          "lineNumber": 32
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "the_queue.task_done",
+          "lineNumber": 35
+        },
+        {
+          "caller": "my_sum_mod",
+          "callee": "print",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/07_multi_processing.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "my_sum",
+          "startLine": 5,
+          "endLine": 10,
+          "params": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum",
+          "callee": "range",
+          "lineNumber": 8
+        },
+        {
+          "caller": "my_sum",
+          "callee": "print",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/08_multi_processing_pool_starmap.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "my_sum",
+          "startLine": 5,
+          "endLine": 11,
+          "params": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum",
+          "callee": "range",
+          "lineNumber": 8
+        },
+        {
+          "caller": "my_sum",
+          "callee": "print",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/09_multi_processing_pool_starmapasync.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "my_sum",
+          "startLine": 5,
+          "endLine": 11,
+          "params": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "my_sum",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "my_sum",
+          "callee": "range",
+          "lineNumber": 8
+        },
+        {
+          "caller": "my_sum",
+          "callee": "print",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/cpu_intensive_multiprocessing.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "f",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "cpu_function",
+          "startLine": 12,
+          "endLine": 36,
+          "params": [
+            "seed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "f",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "cpu_function",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "f",
+          "callee": "math.sin",
+          "lineNumber": 10
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "time.time",
+          "lineNumber": 16
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.seed",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "range",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.random",
+          "lineNumber": 28
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.random",
+          "lineNumber": 29
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "f",
+          "lineNumber": 30
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "print",
+          "lineNumber": 33
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "time.time",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/cpu_intensive_threading.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "f",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "cpu_function",
+          "startLine": 12,
+          "endLine": 36,
+          "params": [
+            "seed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "f",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "cpu_function",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "f",
+          "callee": "math.sin",
+          "lineNumber": 10
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "time.time",
+          "lineNumber": 16
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.seed",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "range",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.random",
+          "lineNumber": 28
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.random",
+          "lineNumber": 29
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "f",
+          "lineNumber": 30
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "print",
+          "lineNumber": 33
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "time.time",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/cpu_intensive.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "f",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "cpu_function",
+          "startLine": 12,
+          "endLine": 36,
+          "params": [
+            "seed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "f",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "cpu_function",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "f",
+          "callee": "math.sin",
+          "lineNumber": 10
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "time.time",
+          "lineNumber": 16
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.seed",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "range",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.random",
+          "lineNumber": 28
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "local_random.random",
+          "lineNumber": 29
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "f",
+          "lineNumber": 30
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "print",
+          "lineNumber": 33
+        },
+        {
+          "caller": "cpu_function",
+          "callee": "time.time",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/io_intensive_multiprocessing.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "io_function",
+          "startLine": 9,
+          "endLine": 31,
+          "params": [
+            "the_url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "io_function",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "io_function",
+          "callee": "time.time",
+          "lineNumber": 15
+        },
+        {
+          "caller": "io_function",
+          "callee": "urllib.request.urlopen",
+          "lineNumber": 18
+        },
+        {
+          "caller": "io_function",
+          "callee": "_u.read",
+          "lineNumber": 19
+        },
+        {
+          "caller": "io_function",
+          "callee": "hashlib.md5",
+          "lineNumber": 22
+        },
+        {
+          "caller": "io_function",
+          "callee": "md5.update",
+          "lineNumber": 23
+        },
+        {
+          "caller": "io_function",
+          "callee": "md5.hexdigest",
+          "lineNumber": 24
+        },
+        {
+          "caller": "io_function",
+          "callee": "open",
+          "lineNumber": 27
+        },
+        {
+          "caller": "io_function",
+          "callee": "file.write",
+          "lineNumber": 28
+        },
+        {
+          "caller": "io_function",
+          "callee": "file.close",
+          "lineNumber": 29
+        },
+        {
+          "caller": "io_function",
+          "callee": "print",
+          "lineNumber": 31
+        },
+        {
+          "caller": "io_function",
+          "callee": "time.time",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/io_intensive_threading.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "io_function",
+          "startLine": 9,
+          "endLine": 31,
+          "params": [
+            "the_url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "io_function",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "io_function",
+          "callee": "time.time",
+          "lineNumber": 15
+        },
+        {
+          "caller": "io_function",
+          "callee": "urllib.request.urlopen",
+          "lineNumber": 18
+        },
+        {
+          "caller": "io_function",
+          "callee": "_u.read",
+          "lineNumber": 19
+        },
+        {
+          "caller": "io_function",
+          "callee": "hashlib.md5",
+          "lineNumber": 22
+        },
+        {
+          "caller": "io_function",
+          "callee": "md5.update",
+          "lineNumber": 23
+        },
+        {
+          "caller": "io_function",
+          "callee": "md5.hexdigest",
+          "lineNumber": 24
+        },
+        {
+          "caller": "io_function",
+          "callee": "open",
+          "lineNumber": 27
+        },
+        {
+          "caller": "io_function",
+          "callee": "file.write",
+          "lineNumber": 28
+        },
+        {
+          "caller": "io_function",
+          "callee": "file.close",
+          "lineNumber": 29
+        },
+        {
+          "caller": "io_function",
+          "callee": "print",
+          "lineNumber": 31
+        },
+        {
+          "caller": "io_function",
+          "callee": "time.time",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/io_intensive.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "io_function",
+          "startLine": 9,
+          "endLine": 31,
+          "params": [
+            "the_url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "io_function",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "io_function",
+          "callee": "time.time",
+          "lineNumber": 15
+        },
+        {
+          "caller": "io_function",
+          "callee": "urllib.request.urlopen",
+          "lineNumber": 18
+        },
+        {
+          "caller": "io_function",
+          "callee": "_u.read",
+          "lineNumber": 19
+        },
+        {
+          "caller": "io_function",
+          "callee": "hashlib.md5",
+          "lineNumber": 22
+        },
+        {
+          "caller": "io_function",
+          "callee": "md5.update",
+          "lineNumber": 23
+        },
+        {
+          "caller": "io_function",
+          "callee": "md5.hexdigest",
+          "lineNumber": 24
+        },
+        {
+          "caller": "io_function",
+          "callee": "open",
+          "lineNumber": 27
+        },
+        {
+          "caller": "io_function",
+          "callee": "file.write",
+          "lineNumber": 28
+        },
+        {
+          "caller": "io_function",
+          "callee": "file.close",
+          "lineNumber": 29
+        },
+        {
+          "caller": "io_function",
+          "callee": "print",
+          "lineNumber": 31
+        },
+        {
+          "caller": "io_function",
+          "callee": "time.time",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "parallel/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "Threading and Parallel processing module",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Pre-requisites",
+          "level": 3,
+          "line": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "sections": [
+        {
+          "heading": "Hands-on lectures for the _Management and Analysis of Physics Datasets - Module B (MAPD-B)_ course",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "M.Sc. in Physic of Data — University of Padova — Academic Year 2025-2026",
+          "level": 3,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "spark/docker-compose.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "spark/notebooks/Lecture1_solutions.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2289,
+      "nonEmptyLines": 2289,
+      "metrics": {}
+    },
+    {
+      "path": "spark/notebooks/Lecture1.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2256,
+      "nonEmptyLines": 2256,
+      "metrics": {}
+    },
+    {
+      "path": "spark/notebooks/Lecture2_solutions.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2746,
+      "nonEmptyLines": 2746,
+      "metrics": {}
+    },
+    {
+      "path": "spark/notebooks/Lecture2.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2695,
+      "nonEmptyLines": 2695,
+      "metrics": {}
+    },
+    {
+      "path": "spark/notebooks/Lecture3_solutions.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 1281,
+      "nonEmptyLines": 1281,
+      "metrics": {}
+    },
+    {
+      "path": "spark/notebooks/Lecture3.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 1935,
+      "nonEmptyLines": 1935,
+      "metrics": {}
+    },
+    {
+      "path": "spark/notebooks/utils/producer.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "send_messages",
+          "startLine": 12,
+          "endLine": 33,
+          "params": [
+            "client_socket"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "send_messages",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send_messages",
+          "callee": "random.choice",
+          "lineNumber": 17
+        },
+        {
+          "caller": "send_messages",
+          "callee": "random.choice",
+          "lineNumber": 18
+        },
+        {
+          "caller": "send_messages",
+          "callee": "float",
+          "lineNumber": 19
+        },
+        {
+          "caller": "send_messages",
+          "callee": "'{:.2f}'.format",
+          "lineNumber": 19
+        },
+        {
+          "caller": "send_messages",
+          "callee": "random.random",
+          "lineNumber": 19
+        },
+        {
+          "caller": "send_messages",
+          "callee": "float",
+          "lineNumber": 20
+        },
+        {
+          "caller": "send_messages",
+          "callee": "'{:.2f}'.format",
+          "lineNumber": 20
+        },
+        {
+          "caller": "send_messages",
+          "callee": "random.random",
+          "lineNumber": 20
+        },
+        {
+          "caller": "send_messages",
+          "callee": "int",
+          "lineNumber": 21
+        },
+        {
+          "caller": "send_messages",
+          "callee": "random.choices",
+          "lineNumber": 21
+        },
+        {
+          "caller": "send_messages",
+          "callee": "client_socket.send",
+          "lineNumber": 25
+        },
+        {
+          "caller": "send_messages",
+          "callee": "(json.dumps(msg)+\"\\n\").encode",
+          "lineNumber": 25
+        },
+        {
+          "caller": "send_messages",
+          "callee": "json.dumps",
+          "lineNumber": 25
+        },
+        {
+          "caller": "send_messages",
+          "callee": "time.sleep",
+          "lineNumber": 27
+        },
+        {
+          "caller": "send_messages",
+          "callee": "exit",
+          "lineNumber": 29
+        },
+        {
+          "caller": "send_messages",
+          "callee": "exit",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spark/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 83,
+      "nonEmptyLines": 50,
+      "sections": [
+        {
+          "heading": "PySpark module",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Docker",
+          "level": 3,
+          "line": 3
+        },
+        {
+          "heading": "Docker compose",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Shutting down the Docker compose \"cluster\"",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Pre-requisites",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Lecture 1",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "Lecture 2",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "Lecture 3",
+          "level": 2,
+          "line": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

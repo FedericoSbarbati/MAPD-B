@@ -1,0 +1,18 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Merge script report shows Input 73 nodes/86 edges == Output 73 nodes/86 edges, meaning zero nodes or edges were dropped during assembly.",
+    "Raw batch-1.json and batch-2.json already used clean, correctly-prefixed node IDs (document:, file:, function:, service:) with no missing id fields, so no 'Fixed' corrections were actually needed beyond what the script's normalization pass trivially confirmed.",
+    "All 4 node types present (service: 7, file: 38, document: 6, function: 22) are valid known types -- no unknown/alias types found.",
+    "All complexity values (simple: 32, moderate: 28, complex: 13) are valid -- no unknown complexity strings found.",
+    "Verified 0 dangling edges (all edge source/target ids resolve to existing nodes) and 0 duplicate node ids / duplicate (source,target,type) edge keys.",
+    "Verified all 38 file nodes resolve to real files on disk under the project root.",
+    "Import map has 48 entries; all entries with non-empty arrays list function names defined within that file (not cross-file imports), and the repo is a teaching repo of independent per-lecture notebooks/scripts with no cross-file imports -- confirmed 0 imports edges is correct, not a gap.",
+    "No fixes were required; assembled-graph.json was not modified."
+  ]
+}

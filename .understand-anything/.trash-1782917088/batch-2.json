@@ -1,0 +1,763 @@
+{
+  "nodes": [
+    {
+      "id": "file:parallel/04extra_minimal_race_condition_with_lock.py",
+      "type": "file",
+      "name": "04extra_minimal_race_condition_with_lock.py",
+      "filePath": "parallel/04extra_minimal_race_condition_with_lock.py",
+      "summary": "Minimal demonstration of a race condition fix using threading.Lock, where 10 threads increment a shared global counter safely inside a critical section.",
+      "tags": ["threading", "race-condition", "lock", "concurrency", "demo-script"],
+      "complexity": "simple",
+      "languageNotes": "Uses a module-level global counter and a threading.Lock acquired/released around the critical section to serialize access across 10 concurrent threads."
+    },
+    {
+      "id": "function:parallel/04extra_minimal_race_condition_with_lock.py:increment",
+      "type": "function",
+      "name": "increment",
+      "filePath": "parallel/04extra_minimal_race_condition_with_lock.py",
+      "lineRange": [5, 10],
+      "summary": "Increments a shared global counter max_val times, guarding each increment with a lock acquire/release to avoid a race condition.",
+      "tags": ["thread-target", "lock", "critical-section"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/05_multi_threaded_pool_lock.py",
+      "type": "file",
+      "name": "05_multi_threaded_pool_lock.py",
+      "filePath": "parallel/05_multi_threaded_pool_lock.py",
+      "summary": "Demonstrates ThreadPoolExecutor with a shared Lock to safely aggregate a common counter and list while four threads each sum a partition of a large range.",
+      "tags": ["threading", "threadpoolexecutor", "lock", "concurrency", "demo-script"],
+      "complexity": "moderate",
+      "languageNotes": "Uses concurrent.futures.ThreadPoolExecutor and wait() to collect futures; a shared Lock protects COMMON_COUNTER and COMMON_LIST mutated from multiple threads."
+    },
+    {
+      "id": "function:parallel/05_multi_threaded_pool_lock.py:my_sum_mod",
+      "type": "function",
+      "name": "my_sum_mod",
+      "filePath": "parallel/05_multi_threaded_pool_lock.py",
+      "lineRange": [8, 34],
+      "summary": "Sums integers in [a, b) and, for multiples of m, safely updates a shared counter and list under a lock; returns the partial sum.",
+      "tags": ["thread-target", "lock", "aggregation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/06_multi_threaded_pool_queue.py",
+      "type": "file",
+      "name": "06_multi_threaded_pool_queue.py",
+      "filePath": "parallel/06_multi_threaded_pool_queue.py",
+      "summary": "Demonstrates ThreadPoolExecutor combined with a thread-safe queue.Queue as an alternative to explicit locking for collecting values found by concurrent worker threads.",
+      "tags": ["threading", "threadpoolexecutor", "queue", "concurrency", "demo-script"],
+      "complexity": "moderate",
+      "languageNotes": "Uses queue.Queue.put()/get() as an inherently thread-safe structure, avoiding the need for a manual Lock used in the sibling 05_ script."
+    },
+    {
+      "id": "function:parallel/06_multi_threaded_pool_queue.py:my_sum_mod",
+      "type": "function",
+      "name": "my_sum_mod",
+      "filePath": "parallel/06_multi_threaded_pool_queue.py",
+      "lineRange": [8, 39],
+      "summary": "Sums integers in [a, b) and pushes multiples of m onto a shared thread-safe queue instead of using a lock; returns the partial sum.",
+      "tags": ["thread-target", "queue", "aggregation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/07_multi_processing.py",
+      "type": "file",
+      "name": "07_multi_processing.py",
+      "filePath": "parallel/07_multi_processing.py",
+      "summary": "Basic example of true parallelism using multiprocessing.Process, spawning two separate OS processes that each sum half of a large integer range concurrently.",
+      "tags": ["multiprocessing", "process", "parallelism", "demo-script"],
+      "complexity": "simple",
+      "languageNotes": "Uses multiprocessing.Process.start()/join() directly rather than a pool, illustrating the most basic sub-process API and bypassing the GIL entirely."
+    },
+    {
+      "id": "function:parallel/07_multi_processing.py:my_sum",
+      "type": "function",
+      "name": "my_sum",
+      "filePath": "parallel/07_multi_processing.py",
+      "lineRange": [5, 10],
+      "summary": "Sums integers in the range [a, b) and prints the result; used as the target function for each spawned process.",
+      "tags": ["process-target", "aggregation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/08_multi_processing_pool_starmap.py",
+      "type": "file",
+      "name": "08_multi_processing_pool_starmap.py",
+      "filePath": "parallel/08_multi_processing_pool_starmap.py",
+      "summary": "Demonstrates multiprocessing.Pool.starmap to distribute a range-sum computation across 4 worker processes with a blocking call that returns all results at once.",
+      "tags": ["multiprocessing", "pool", "starmap", "parallelism", "demo-script"],
+      "complexity": "simple",
+      "languageNotes": "starmap is a blocking pool API that unpacks tuples of arguments into the target function, contrasting with the non-blocking starmap_async used in script 09."
+    },
+    {
+      "id": "function:parallel/08_multi_processing_pool_starmap.py:my_sum",
+      "type": "function",
+      "name": "my_sum",
+      "filePath": "parallel/08_multi_processing_pool_starmap.py",
+      "lineRange": [5, 11],
+      "summary": "Sums integers in the range [a, b), prints, and returns the result; distributed across a process pool via starmap.",
+      "tags": ["process-target", "aggregation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/09_multi_processing_pool_starmapasync.py",
+      "type": "file",
+      "name": "09_multi_processing_pool_starmapasync.py",
+      "filePath": "parallel/09_multi_processing_pool_starmapasync.py",
+      "summary": "Demonstrates the non-blocking multiprocessing.Pool.starmap_async API, polling readiness in a loop while sub-processes compute partial sums in the background.",
+      "tags": ["multiprocessing", "pool", "async", "parallelism", "demo-script"],
+      "complexity": "simple",
+      "languageNotes": "starmap_async returns immediately and exposes .ready()/.get(), letting the main thread continue other work until results are needed, unlike the blocking starmap in script 08."
+    },
+    {
+      "id": "function:parallel/09_multi_processing_pool_starmapasync.py:my_sum",
+      "type": "function",
+      "name": "my_sum",
+      "filePath": "parallel/09_multi_processing_pool_starmapasync.py",
+      "lineRange": [5, 11],
+      "summary": "Sums integers in the range [a, b), prints, and returns the result; distributed asynchronously across a process pool via starmap_async.",
+      "tags": ["process-target", "aggregation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/cpu_intensive.py",
+      "type": "file",
+      "name": "cpu_intensive.py",
+      "filePath": "parallel/cpu_intensive.py",
+      "summary": "Sequential baseline for a CPU-bound Monte Carlo integration benchmark, running 10 chunks of a numerical integration one after another without any concurrency.",
+      "tags": ["cpu-bound", "monte-carlo", "benchmark", "baseline", "demo-script"],
+      "complexity": "moderate",
+      "languageNotes": "Serves as the timing baseline compared against the threaded and multiprocessing variants of the same computation, useful for illustrating the GIL's effect on CPU-bound workloads."
+    },
+    {
+      "id": "function:parallel/cpu_intensive.py:f",
+      "type": "function",
+      "name": "f",
+      "filePath": "parallel/cpu_intensive.py",
+      "lineRange": [8, 10],
+      "summary": "Arbitrary mathematical function sin(1/(x*(2-x)))^2 used as the integrand for the Monte Carlo integration.",
+      "tags": ["math-function", "integrand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:parallel/cpu_intensive.py:cpu_function",
+      "type": "function",
+      "name": "cpu_function",
+      "filePath": "parallel/cpu_intensive.py",
+      "lineRange": [12, 36],
+      "summary": "Performs a seeded Monte Carlo integration of f(x) over 2 million random samples and returns the hit count and sample size.",
+      "tags": ["cpu-bound", "monte-carlo", "worker-function"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/cpu_intensive_threading.py",
+      "type": "file",
+      "name": "cpu_intensive_threading.py",
+      "filePath": "parallel/cpu_intensive_threading.py",
+      "summary": "Runs the same CPU-bound Monte Carlo integration as cpu_intensive.py but distributes the 10 chunks across a ThreadPoolExecutor, illustrating that threading provides no speedup for CPU-bound work due to the GIL.",
+      "tags": ["cpu-bound", "threading", "threadpoolexecutor", "monte-carlo", "benchmark"],
+      "complexity": "moderate",
+      "languageNotes": "Directly comparable to cpu_intensive.py and cpu_intensive_multiprocessing.py to contrast sequential, threaded, and multi-process execution times for the same CPU-bound task."
+    },
+    {
+      "id": "function:parallel/cpu_intensive_threading.py:f",
+      "type": "function",
+      "name": "f",
+      "filePath": "parallel/cpu_intensive_threading.py",
+      "lineRange": [8, 10],
+      "summary": "Arbitrary mathematical function sin(1/(x*(2-x)))^2 used as the integrand for the Monte Carlo integration.",
+      "tags": ["math-function", "integrand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:parallel/cpu_intensive_threading.py:cpu_function",
+      "type": "function",
+      "name": "cpu_function",
+      "filePath": "parallel/cpu_intensive_threading.py",
+      "lineRange": [12, 36],
+      "summary": "Performs a seeded Monte Carlo integration of f(x) over 2 million random samples and returns the hit count and sample size; submitted as a task to a ThreadPoolExecutor.",
+      "tags": ["cpu-bound", "monte-carlo", "worker-function", "thread-target"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/cpu_intensive_multiprocessing.py",
+      "type": "file",
+      "name": "cpu_intensive_multiprocessing.py",
+      "filePath": "parallel/cpu_intensive_multiprocessing.py",
+      "summary": "Runs the same CPU-bound Monte Carlo integration as cpu_intensive.py but distributes the 10 chunks across separate processes, demonstrating real parallel speedup for CPU-bound work by bypassing the GIL.",
+      "tags": ["cpu-bound", "multiprocessing", "monte-carlo", "benchmark", "parallelism"],
+      "complexity": "moderate",
+      "languageNotes": "Directly comparable to cpu_intensive.py and cpu_intensive_threading.py; multiprocessing achieves true parallelism for CPU-bound tasks where threading cannot due to the GIL."
+    },
+    {
+      "id": "function:parallel/cpu_intensive_multiprocessing.py:f",
+      "type": "function",
+      "name": "f",
+      "filePath": "parallel/cpu_intensive_multiprocessing.py",
+      "lineRange": [8, 10],
+      "summary": "Arbitrary mathematical function sin(1/(x*(2-x)))^2 used as the integrand for the Monte Carlo integration.",
+      "tags": ["math-function", "integrand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:parallel/cpu_intensive_multiprocessing.py:cpu_function",
+      "type": "function",
+      "name": "cpu_function",
+      "filePath": "parallel/cpu_intensive_multiprocessing.py",
+      "lineRange": [12, 36],
+      "summary": "Performs a seeded Monte Carlo integration of f(x) over 2 million random samples and returns the hit count and sample size; distributed across worker processes.",
+      "tags": ["cpu-bound", "monte-carlo", "worker-function", "process-target"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/io_intensive.py",
+      "type": "file",
+      "name": "io_intensive.py",
+      "filePath": "parallel/io_intensive.py",
+      "summary": "Sequential baseline for an I/O-bound benchmark that downloads a list of remote image URLs one at a time and saves each to disk under a content-hashed filename.",
+      "tags": ["io-bound", "benchmark", "baseline", "networking", "demo-script"],
+      "complexity": "moderate",
+      "languageNotes": "Serves as the timing baseline compared against the threaded and multiprocessing I/O variants, illustrating that threading (unlike for CPU-bound work) does help I/O-bound workloads since the GIL is released during blocking I/O."
+    },
+    {
+      "id": "function:parallel/io_intensive.py:io_function",
+      "type": "function",
+      "name": "io_function",
+      "filePath": "parallel/io_intensive.py",
+      "lineRange": [9, 31],
+      "summary": "Fetches a remote file over HTTP, computes an MD5 hash of its content for the filename, and writes the file to the local pics directory.",
+      "tags": ["io-bound", "http-request", "worker-function"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/io_intensive_threading.py",
+      "type": "file",
+      "name": "io_intensive_threading.py",
+      "filePath": "parallel/io_intensive_threading.py",
+      "summary": "Runs the same I/O-bound URL-fetching benchmark as io_intensive.py but distributes the downloads across a ThreadPoolExecutor, showing that threading speeds up I/O-bound work because the GIL is released during blocking network calls.",
+      "tags": ["io-bound", "threading", "threadpoolexecutor", "networking", "benchmark"],
+      "complexity": "moderate",
+      "languageNotes": "Directly comparable to io_intensive.py and io_intensive_multiprocessing.py to contrast sequential, threaded, and multi-process execution times for the same I/O-bound task."
+    },
+    {
+      "id": "function:parallel/io_intensive_threading.py:io_function",
+      "type": "function",
+      "name": "io_function",
+      "filePath": "parallel/io_intensive_threading.py",
+      "lineRange": [9, 31],
+      "summary": "Fetches a remote file over HTTP, computes an MD5 hash of its content for the filename, and writes the file to the local pics directory; submitted as a task to a ThreadPoolExecutor.",
+      "tags": ["io-bound", "http-request", "worker-function", "thread-target"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/io_intensive_multiprocessing.py",
+      "type": "file",
+      "name": "io_intensive_multiprocessing.py",
+      "filePath": "parallel/io_intensive_multiprocessing.py",
+      "summary": "Runs the same I/O-bound URL-fetching benchmark as io_intensive.py but distributes the downloads across separate processes, used to compare process-based vs thread-based vs sequential I/O concurrency.",
+      "tags": ["io-bound", "multiprocessing", "networking", "benchmark", "parallelism"],
+      "complexity": "moderate",
+      "languageNotes": "Directly comparable to io_intensive.py and io_intensive_threading.py; for I/O-bound tasks, multiprocessing typically offers no advantage over threading but carries higher process-creation overhead."
+    },
+    {
+      "id": "function:parallel/io_intensive_multiprocessing.py:io_function",
+      "type": "function",
+      "name": "io_function",
+      "filePath": "parallel/io_intensive_multiprocessing.py",
+      "lineRange": [9, 31],
+      "summary": "Fetches a remote file over HTTP, computes an MD5 hash of its content for the filename, and writes the file to the local pics directory; distributed across worker processes.",
+      "tags": ["io-bound", "http-request", "worker-function", "process-target"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:parallel/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "parallel/README.md",
+      "summary": "Explains the threading and multiprocessing lecture module, covering the Python GIL, installing multiple Python versions via deadsnakes, monitoring CPU usage with htop, and pinning processes to CPUs with taskset.",
+      "tags": ["documentation", "threading", "multiprocessing", "gil", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Top-level project README introducing the MAPD-B course hands-on materials and mapping each topic folder (mysql, parallel, spark, dask, kafka) to its subject area.",
+      "tags": ["documentation", "entry-point", "overview", "course-materials"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:spark/docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "spark/docker-compose.yml",
+      "summary": "Docker Compose configuration standing up a standalone Spark cluster with a spark-master, one or more scalable spark-worker containers, and a Jupyter notebook client, exposing the Spark UI, master port, and notebook interface.",
+      "tags": ["orchestration", "infrastructure", "spark", "docker-compose", "containerization"],
+      "complexity": "simple",
+      "languageNotes": "Uses prebuilt images (jpazzini/mapd-b:spark-master/worker/jupyter) and depends_on ordering so workers and the Jupyter client wait on the master; SPARK_WORKER_CORES/MEMORY env vars tune per-worker resources and the service can be horizontally scaled with --scale spark-worker=N."
+    },
+    {
+      "id": "service:spark/docker-compose.yml:spark-master",
+      "type": "service",
+      "name": "spark-master",
+      "filePath": "spark/docker-compose.yml",
+      "summary": "Spark cluster master node acting as the head node and resource manager, exposing the Spark master UI on port 8080 and the cluster RPC port 7077.",
+      "tags": ["spark", "cluster-master", "containerization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:spark/docker-compose.yml:spark-worker",
+      "type": "service",
+      "name": "spark-worker",
+      "filePath": "spark/docker-compose.yml",
+      "summary": "Spark worker node that connects to spark-master and provides processing capacity, configurable via SPARK_WORKER_CORES and SPARK_WORKER_MEMORY, and scalable to multiple replicas.",
+      "tags": ["spark", "cluster-worker", "containerization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:spark/docker-compose.yml:jupyter-notebook",
+      "type": "service",
+      "name": "jupyter-notebook",
+      "filePath": "spark/docker-compose.yml",
+      "summary": "Jupyter notebook service bundling the Spark client and Python interpreter, exposing the notebook UI on host port 1234 and the Spark application UI on port 4040.",
+      "tags": ["spark", "jupyter", "containerization", "client"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:spark/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "spark/README.md",
+      "summary": "Guide for the PySpark module explaining the Docker-based cluster setup (master, worker(s), Jupyter client), how to start/scale/stop the cluster, and a summary of the topics covered in Lectures 1-3 (core Spark, DataFrames, structured streaming).",
+      "tags": ["documentation", "entry-point", "spark", "docker-compose", "overview"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spark/notebooks/Lecture1.ipynb",
+      "type": "file",
+      "name": "Lecture1.ipynb",
+      "filePath": "spark/notebooks/Lecture1.ipynb",
+      "summary": "Introductory PySpark notebook covering connecting to a Dockerized Spark cluster, creating a Spark Session and Spark Context, basic RDD operations (parallelize, map, reduce), the Spark application Web UI, word count, computing pi via Monte Carlo, and a distributed gradient descent exercise.",
+      "tags": ["notebook", "pyspark", "rdd", "spark-session", "tutorial"],
+      "complexity": "complex",
+      "languageNotes": "Large exercise notebook (115 cells) that introduces the SparkSession/SparkContext entry points and core RDD transformations/actions before moving to DataFrames in later lectures."
+    },
+    {
+      "id": "file:spark/notebooks/Lecture1_solutions.ipynb",
+      "type": "file",
+      "name": "Lecture1_solutions.ipynb",
+      "filePath": "spark/notebooks/Lecture1_solutions.ipynb",
+      "summary": "Solutions companion to Lecture1.ipynb, providing completed implementations of the Spark Session setup, RDD operations, word count, pi estimation, and distributed gradient descent exercises.",
+      "tags": ["notebook", "pyspark", "solutions", "rdd", "tutorial"],
+      "complexity": "complex",
+      "languageNotes": "Mirrors the structure of Lecture1.ipynb but with worked-out answers, intended as an instructor/reference copy of the exercise notebook."
+    },
+    {
+      "id": "file:spark/notebooks/Lecture2.ipynb",
+      "type": "file",
+      "name": "Lecture2.ipynb",
+      "filePath": "spark/notebooks/Lecture2.ipynb",
+      "summary": "PySpark DataFrames notebook covering Spark SQL, creating DataFrames from Rows, tuples, and Pandas DataFrames, basic DataFrame operations, and User Defined Functions (UDFs) and Pandas UDFs.",
+      "tags": ["notebook", "pyspark", "dataframe", "spark-sql", "udf", "tutorial"],
+      "complexity": "complex",
+      "languageNotes": "Builds on the SparkSession introduced in Lecture 1 and shifts focus from low-level RDDs to the higher-level, schema-aware DataFrame/Spark SQL API, including UDF and PandasUDF interoperability with Pandas."
+    },
+    {
+      "id": "file:spark/notebooks/Lecture2_solutions.ipynb",
+      "type": "file",
+      "name": "Lecture2_solutions.ipynb",
+      "filePath": "spark/notebooks/Lecture2_solutions.ipynb",
+      "summary": "Solutions companion to Lecture2.ipynb, providing completed implementations of DataFrame creation, DataFrame operations, and UDF/PandasUDF exercises.",
+      "tags": ["notebook", "pyspark", "solutions", "dataframe", "udf", "tutorial"],
+      "complexity": "complex",
+      "languageNotes": "Mirrors the structure of Lecture2.ipynb but with worked-out answers, intended as an instructor/reference copy of the exercise notebook."
+    },
+    {
+      "id": "file:spark/notebooks/Lecture3.ipynb",
+      "type": "file",
+      "name": "Lecture3.ipynb",
+      "filePath": "spark/notebooks/Lecture3.ipynb",
+      "summary": "Spark Structured Streaming notebook demonstrating stream processing by reading from a TCP socket source (populated by the producer.py script) and applying distributed streaming transformations to the incoming records.",
+      "tags": ["notebook", "pyspark", "structured-streaming", "tcp-socket", "tutorial"],
+      "complexity": "complex",
+      "languageNotes": "Introduces Spark Structured Streaming's model of treating a continuous stream as an ever-appending table, and relies on the companion producer.py script as the external TCP data source."
+    },
+    {
+      "id": "file:spark/notebooks/Lecture3_solutions.ipynb",
+      "type": "file",
+      "name": "Lecture3_solutions.ipynb",
+      "filePath": "spark/notebooks/Lecture3_solutions.ipynb",
+      "summary": "Solutions companion to Lecture3.ipynb, providing completed implementations of the TCP socket streaming source setup and distributed stream processing exercises.",
+      "tags": ["notebook", "pyspark", "solutions", "structured-streaming", "tutorial"],
+      "complexity": "complex",
+      "languageNotes": "Mirrors the structure of Lecture3.ipynb but with worked-out answers, intended as an instructor/reference copy of the exercise notebook."
+    },
+    {
+      "id": "file:spark/notebooks/utils/producer.py",
+      "type": "file",
+      "name": "producer.py",
+      "filePath": "spark/notebooks/utils/producer.py",
+      "summary": "Standalone TCP socket server that generates randomized fake transaction records (name, surname, amount, delta_t, flag) as JSON lines and streams them to a connected client, used as the data source for the Lecture 3 Structured Streaming exercises.",
+      "tags": ["tcp-socket", "data-generator", "streaming", "utility", "entry-point"],
+      "complexity": "moderate",
+      "languageNotes": "Uses a raw socket.socket() server (bind/listen/accept) rather than a framework, and argparse to accept the hostname to bind to; supplies the socket source consumed by Lecture3.ipynb / Lecture3_solutions.ipynb."
+    },
+    {
+      "id": "function:spark/notebooks/utils/producer.py:send_messages",
+      "type": "function",
+      "name": "send_messages",
+      "filePath": "spark/notebooks/utils/producer.py",
+      "lineRange": [12, 33],
+      "summary": "Continuously generates a random transaction-like JSON message and sends it, newline-terminated, over the given client socket every 0.2 seconds until interrupted or the socket errors out.",
+      "tags": ["data-generator", "socket-io", "streaming-loop"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:parallel/04extra_minimal_race_condition_with_lock.py",
+      "target": "function:parallel/04extra_minimal_race_condition_with_lock.py:increment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/05_multi_threaded_pool_lock.py",
+      "target": "function:parallel/05_multi_threaded_pool_lock.py:my_sum_mod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/06_multi_threaded_pool_queue.py",
+      "target": "function:parallel/06_multi_threaded_pool_queue.py:my_sum_mod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/07_multi_processing.py",
+      "target": "function:parallel/07_multi_processing.py:my_sum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/08_multi_processing_pool_starmap.py",
+      "target": "function:parallel/08_multi_processing_pool_starmap.py:my_sum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/09_multi_processing_pool_starmapasync.py",
+      "target": "function:parallel/09_multi_processing_pool_starmapasync.py:my_sum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/cpu_intensive.py",
+      "target": "function:parallel/cpu_intensive.py:f",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/cpu_intensive.py",
+      "target": "function:parallel/cpu_intensive.py:cpu_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/cpu_intensive_threading.py",
+      "target": "function:parallel/cpu_intensive_threading.py:f",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/cpu_intensive_threading.py",
+      "target": "function:parallel/cpu_intensive_threading.py:cpu_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/cpu_intensive_multiprocessing.py",
+      "target": "function:parallel/cpu_intensive_multiprocessing.py:f",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/cpu_intensive_multiprocessing.py",
+      "target": "function:parallel/cpu_intensive_multiprocessing.py:cpu_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/io_intensive.py",
+      "target": "function:parallel/io_intensive.py:io_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/io_intensive_threading.py",
+      "target": "function:parallel/io_intensive_threading.py:io_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/io_intensive_multiprocessing.py",
+      "target": "function:parallel/io_intensive_multiprocessing.py:io_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spark/notebooks/utils/producer.py",
+      "target": "function:spark/notebooks/utils/producer.py:send_messages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "document:parallel/README.md",
+      "target": "file:parallel/04extra_minimal_race_condition_with_lock.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:parallel/README.md",
+      "target": "file:parallel/05_multi_threaded_pool_lock.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:parallel/README.md",
+      "target": "file:parallel/06_multi_threaded_pool_queue.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:parallel/README.md",
+      "target": "file:parallel/07_multi_processing.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:parallel/README.md",
+      "target": "file:parallel/cpu_intensive.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:parallel/README.md",
+      "target": "file:parallel/io_intensive.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:parallel/README.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:spark/README.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:spark/README.md",
+      "target": "service:spark/docker-compose.yml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:spark/README.md",
+      "target": "file:spark/notebooks/Lecture1.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:spark/README.md",
+      "target": "file:spark/notebooks/Lecture2.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:spark/README.md",
+      "target": "file:spark/notebooks/Lecture3.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "service:spark/docker-compose.yml",
+      "target": "service:spark/docker-compose.yml:spark-master",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:spark/docker-compose.yml",
+      "target": "service:spark/docker-compose.yml:spark-worker",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:spark/docker-compose.yml",
+      "target": "service:spark/docker-compose.yml:jupyter-notebook",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:spark/docker-compose.yml:spark-worker",
+      "target": "service:spark/docker-compose.yml:spark-master",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:spark/docker-compose.yml:jupyter-notebook",
+      "target": "service:spark/docker-compose.yml:spark-master",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:spark/docker-compose.yml:jupyter-notebook",
+      "target": "file:spark/notebooks/Lecture1.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:spark/docker-compose.yml:jupyter-notebook",
+      "target": "file:spark/notebooks/Lecture2.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:spark/docker-compose.yml:jupyter-notebook",
+      "target": "file:spark/notebooks/Lecture3.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:spark/notebooks/Lecture1.ipynb",
+      "target": "file:spark/notebooks/Lecture1_solutions.ipynb",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:spark/notebooks/Lecture2.ipynb",
+      "target": "file:spark/notebooks/Lecture2_solutions.ipynb",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:spark/notebooks/Lecture3.ipynb",
+      "target": "file:spark/notebooks/Lecture3_solutions.ipynb",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:spark/notebooks/Lecture1.ipynb",
+      "target": "file:spark/notebooks/Lecture2.ipynb",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:spark/notebooks/Lecture2.ipynb",
+      "target": "file:spark/notebooks/Lecture3.ipynb",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:spark/notebooks/Lecture3.ipynb",
+      "target": "file:spark/notebooks/utils/producer.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:spark/notebooks/Lecture3_solutions.ipynb",
+      "target": "file:spark/notebooks/utils/producer.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:parallel/cpu_intensive_threading.py",
+      "target": "file:parallel/cpu_intensive.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/cpu_intensive_multiprocessing.py",
+      "target": "file:parallel/cpu_intensive.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/io_intensive_threading.py",
+      "target": "file:parallel/io_intensive.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/io_intensive_multiprocessing.py",
+      "target": "file:parallel/io_intensive.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/08_multi_processing_pool_starmap.py",
+      "target": "file:parallel/09_multi_processing_pool_starmapasync.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/05_multi_threaded_pool_lock.py",
+      "target": "file:parallel/06_multi_threaded_pool_queue.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

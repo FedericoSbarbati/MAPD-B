@@ -1,0 +1,117 @@
+[
+  {
+    "id": "layer:dask-module",
+    "name": "Dask Module",
+    "description": "Self-contained distributed-computing lecture unit covering Dask delayed/futures, bags, and dataframes, packaged with its own Docker Compose scheduler/worker/Jupyter cluster and README.",
+    "nodeIds": [
+      "service:dask/docker-compose.yml",
+      "file:dask/notebooks/Lecture1_solutions.ipynb",
+      "file:dask/notebooks/Lecture1.ipynb",
+      "file:dask/notebooks/Lecture2_solutions.ipynb",
+      "file:dask/notebooks/Lecture2.ipynb",
+      "file:dask/notebooks/Lecture3_solutions.ipynb",
+      "file:dask/notebooks/Lecture3.ipynb",
+      "document:dask/README.md"
+    ]
+  },
+  {
+    "id": "layer:kafka-module",
+    "name": "Kafka Module",
+    "description": "Lecture unit on Kafka producer/consumer APIs, consumer groups, and Kafka-Spark Structured Streaming integration, with its own Docker Compose broker/Spark/Jupyter stack and README.",
+    "nodeIds": [
+      "service:kafka/docker-compose.yml",
+      "file:kafka/notebooks/Consumer.ipynb",
+      "file:kafka/notebooks/ConsumerGroup.ipynb",
+      "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "file:kafka/notebooks/Producer.ipynb",
+      "document:kafka/README.md"
+    ]
+  },
+  {
+    "id": "layer:mysql-module",
+    "name": "MySQL Module",
+    "description": "RDBMS/SQL lecture unit teaching MySQL querying against the IMDb dataset, packaged with a custom Jupyter client Dockerfile, a MySQL server Compose stack, and README.",
+    "nodeIds": [
+      "service:mysql/docker-compose.yml",
+      "file:mysql/docker/mapd_notebook.Dockerfile",
+      "file:mysql/notebooks/MySQL_solutions.ipynb",
+      "file:mysql/notebooks/MySQL.ipynb",
+      "document:mysql/README.md"
+    ]
+  },
+  {
+    "id": "layer:spark-module",
+    "name": "Spark Module",
+    "description": "PySpark lecture unit covering RDDs, DataFrames/Spark SQL, and Structured Streaming, packaged with a master/worker/Jupyter Docker Compose cluster, a TCP socket producer utility script, and README.",
+    "nodeIds": [
+      "service:spark/docker-compose.yml",
+      "service:spark/docker-compose.yml:spark-master",
+      "service:spark/docker-compose.yml:spark-worker",
+      "service:spark/docker-compose.yml:jupyter-notebook",
+      "document:spark/README.md",
+      "file:spark/notebooks/Lecture1.ipynb",
+      "file:spark/notebooks/Lecture1_solutions.ipynb",
+      "file:spark/notebooks/Lecture2.ipynb",
+      "file:spark/notebooks/Lecture2_solutions.ipynb",
+      "file:spark/notebooks/Lecture3.ipynb",
+      "file:spark/notebooks/Lecture3_solutions.ipynb",
+      "file:spark/notebooks/utils/producer.py",
+      "function:spark/notebooks/utils/producer.py:send_messages"
+    ]
+  },
+  {
+    "id": "layer:parallel-fundamentals",
+    "name": "Parallel Programming Fundamentals",
+    "description": "Pure-Python, Docker-free lecture unit of standalone scripts progressively teaching threading, race conditions, locks, queues, and multiprocessing, plus CPU-bound vs I/O-bound benchmark comparisons.",
+    "nodeIds": [
+      "file:parallel/00_single_threaded.py",
+      "function:parallel/00_single_threaded.py:my_sum",
+      "file:parallel/01_multi_threaded.py",
+      "function:parallel/01_multi_threaded.py:my_sum",
+      "file:parallel/02_multi_threaded_local_data.py",
+      "function:parallel/02_multi_threaded_local_data.py:my_sum",
+      "file:parallel/03_multi_threaded_nolock.py",
+      "function:parallel/03_multi_threaded_nolock.py:my_sum_mod",
+      "file:parallel/03extra_minimal_race_condition.py",
+      "function:parallel/03extra_minimal_race_condition.py:increment",
+      "file:parallel/04_multi_threaded_lock.py",
+      "function:parallel/04_multi_threaded_lock.py:my_sum_mod",
+      "file:parallel/04extra_minimal_race_condition_with_lock.py",
+      "function:parallel/04extra_minimal_race_condition_with_lock.py:increment",
+      "file:parallel/05_multi_threaded_pool_lock.py",
+      "function:parallel/05_multi_threaded_pool_lock.py:my_sum_mod",
+      "file:parallel/06_multi_threaded_pool_queue.py",
+      "function:parallel/06_multi_threaded_pool_queue.py:my_sum_mod",
+      "file:parallel/07_multi_processing.py",
+      "function:parallel/07_multi_processing.py:my_sum",
+      "file:parallel/08_multi_processing_pool_starmap.py",
+      "function:parallel/08_multi_processing_pool_starmap.py:my_sum",
+      "file:parallel/09_multi_processing_pool_starmapasync.py",
+      "function:parallel/09_multi_processing_pool_starmapasync.py:my_sum",
+      "file:parallel/cpu_intensive.py",
+      "function:parallel/cpu_intensive.py:f",
+      "function:parallel/cpu_intensive.py:cpu_function",
+      "file:parallel/cpu_intensive_threading.py",
+      "function:parallel/cpu_intensive_threading.py:f",
+      "function:parallel/cpu_intensive_threading.py:cpu_function",
+      "file:parallel/cpu_intensive_multiprocessing.py",
+      "function:parallel/cpu_intensive_multiprocessing.py:f",
+      "function:parallel/cpu_intensive_multiprocessing.py:cpu_function",
+      "file:parallel/io_intensive.py",
+      "function:parallel/io_intensive.py:io_function",
+      "file:parallel/io_intensive_threading.py",
+      "function:parallel/io_intensive_threading.py:io_function",
+      "file:parallel/io_intensive_multiprocessing.py",
+      "function:parallel/io_intensive_multiprocessing.py:io_function",
+      "document:parallel/README.md"
+    ]
+  },
+  {
+    "id": "layer:course-documentation",
+    "name": "Course Documentation",
+    "description": "Top-level entry-point documentation that introduces the MAPD-B course and maps each topic module to its subject area.",
+    "nodeIds": [
+      "document:README.md"
+    ]
+  }
+]

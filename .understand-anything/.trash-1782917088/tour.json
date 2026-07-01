@@ -1,0 +1,117 @@
+[
+  {
+    "order": 1,
+    "title": "Course Overview",
+    "description": "The root README is the course syllabus in miniature: a single table mapping five topic folders (mysql, parallel, spark, dask, kafka) to their subject areas. This is a hands-on lecture repository for the MAPD-B course at the University of Padova, not a single deployable application, so the 'architecture' here is really a curriculum -- each folder is a self-contained module with its own Docker environment and notebooks. The tour follows a learning path through these modules rather than a dependency graph.",
+    "nodeIds": ["document:README.md"]
+  },
+  {
+    "order": 2,
+    "title": "Parallel Programming Fundamentals",
+    "description": "Before touching any distributed-computing framework, the course grounds students in single-machine concurrency using pure Python and no Docker at all. The parallel/README.md explains the Global Interpreter Lock (GIL), how to install multiple Python versions via deadsnakes, and tools like htop and taskset for observing CPU usage -- concepts that explain why Spark, Dask, and Kafka exist in the first place (a single Python process can't use multiple cores for CPU-bound work without extra machinery).",
+    "nodeIds": ["document:parallel/README.md"]
+  },
+  {
+    "order": 3,
+    "title": "Threads and the Race Condition",
+    "description": "The module builds up in small, deliberate steps: 00_single_threaded.py times a plain sequential sum as a baseline, 01_multi_threaded.py splits the same workload across two Thread objects to show basic start/join semantics, and 03_multi_threaded_nolock.py deliberately breaks correctness by having threads mutate shared global state without synchronization. Running these in order reproduces the classic 'threads look like free parallelism until they aren't' lesson -- 04_multi_threaded_lock.py then fixes the same race condition with a threading.Lock, and 03extra/04extra provide a minimal 10-thread counter example of the same bug and fix in isolation.",
+    "nodeIds": [
+      "file:parallel/00_single_threaded.py",
+      "file:parallel/01_multi_threaded.py",
+      "file:parallel/03_multi_threaded_nolock.py",
+      "file:parallel/04_multi_threaded_lock.py"
+    ],
+    "languageLesson": "Python's Global Interpreter Lock (GIL) means only one thread executes Python bytecode at a time, so threading.Thread gives concurrency, not parallelism, for CPU-bound code. A threading.Lock's acquire/release pair creates a critical section: without it, 'increment the counter' is not atomic and concurrent threads can silently lose updates."
+  },
+  {
+    "order": 4,
+    "title": "CPU-Bound vs I/O-Bound: Threads, Processes, Pools",
+    "description": "Building on the lock/queue patterns from Step 3 (05_multi_threaded_pool_lock.py and 06_multi_threaded_pool_queue.py show ThreadPoolExecutor combined with a Lock or a thread-safe Queue), the module then contrasts two benchmark pairs that make the GIL's real-world impact concrete. cpu_intensive.py vs cpu_intensive_threading.py vs cpu_intensive_multiprocessing.py show that threading gives no speedup for CPU-bound Monte Carlo integration (the GIL blocks it) while multiprocessing does, and io_intensive.py vs its threading/multiprocessing variants show the opposite: threading helps I/O-bound work because the GIL is released during blocking network calls.",
+    "nodeIds": [
+      "file:parallel/cpu_intensive.py",
+      "file:parallel/cpu_intensive_threading.py",
+      "file:parallel/cpu_intensive_multiprocessing.py",
+      "file:parallel/io_intensive.py",
+      "file:parallel/io_intensive_threading.py"
+    ],
+    "languageLesson": "multiprocessing.Process/Pool sidesteps the GIL entirely by running separate OS processes, each with its own Python interpreter and memory space -- the right tool for CPU-bound work. ThreadPoolExecutor is the right tool for I/O-bound work because blocking calls like network I/O release the GIL, letting other threads run while one waits."
+  },
+  {
+    "order": 5,
+    "title": "MySQL Module: Relational Databases",
+    "description": "With single-machine concurrency covered, the course moves to the simplest infrastructure module: a two-container stack (MySQL server plus a custom Jupyter client) for teaching SQL against the IMDb dataset. The mysql/README.md documents the startup/shutdown flow and the prerequisite of downloading the IMDb_pruned.sql dump, while mapd_notebook.Dockerfile shows how the Jupyter client image is built on python:3.14.2-slim with SQLAlchemy, ipython-sql, and mysql-connector-python. MySQL.ipynb is the introductory lecture notebook, connecting to the container and running basic SQL queries, with MySQL_solutions.ipynb as the optional worked-solutions companion.",
+    "nodeIds": [
+      "document:mysql/README.md",
+      "service:mysql/docker-compose.yml",
+      "file:mysql/docker/mapd_notebook.Dockerfile",
+      "file:mysql/notebooks/MySQL.ipynb"
+    ],
+    "languageLesson": "Multi-container Docker Compose stacks let a lecture bind a database server and a client tool together with one command, while a bind-mounted workspace volume means notebook edits persist outside the container. Building a custom client image (rather than using MySQL's own image for Jupyter) lets the course pin exact Python library versions (SQLAlchemy, ipython-sql) needed for the exercises."
+  },
+  {
+    "order": 6,
+    "title": "Spark Module: Distributed Computing Cluster",
+    "description": "The course's core distributed-computing unit introduces a real multi-node cluster: spark/docker-compose.yml defines a spark-master (resource manager, port 8080/7077), one or more scalable spark-worker replicas, and a jupyter-notebook service that bundles the Spark client and exposes both the notebook UI and the Spark application UI (port 4040). Unlike the single-container MySQL setup from Step 5, this is the first module where the docker-compose.yml itself models internal service dependencies (worker and notebook both depend_on the master), foreshadowing the cluster topology that Kafka's module reuses in Step 8.",
+    "nodeIds": [
+      "document:spark/README.md",
+      "service:spark/docker-compose.yml",
+      "service:spark/docker-compose.yml:spark-master",
+      "service:spark/docker-compose.yml:spark-worker",
+      "service:spark/docker-compose.yml:jupyter-notebook"
+    ],
+    "languageLesson": "The Spark master/worker/driver model: the master tracks cluster resources, workers execute tasks, and the driver (running inside the Jupyter client here) submits jobs and coordinates execution. Docker Compose's depends_on and shared network let the driver discover spark-master by service name rather than a hardcoded IP."
+  },
+  {
+    "order": 7,
+    "title": "PySpark: RDDs to DataFrames to Streaming",
+    "description": "The three Spark lectures build directly on the cluster from Step 6 and escalate in abstraction. Lecture1.ipynb covers the low-level RDD API (parallelize, map, reduce) plus word count and Monte Carlo pi estimation; Lecture2.ipynb moves to the higher-level DataFrame/Spark SQL API with UDFs and Pandas UDFs; Lecture3.ipynb introduces Structured Streaming, reading a live TCP socket stream generated by producer.py and applying the same DataFrame operations to unbounded data. Each lecture has a solutions notebook as an optional companion for checking worked answers.",
+    "nodeIds": [
+      "file:spark/notebooks/Lecture1.ipynb",
+      "file:spark/notebooks/Lecture2.ipynb",
+      "file:spark/notebooks/Lecture3.ipynb",
+      "file:spark/notebooks/utils/producer.py"
+    ],
+    "languageLesson": "RDDs (Resilient Distributed Datasets) are Spark's original low-level, partition-aware collection abstraction; DataFrames add a schema and a query optimizer (Catalyst) on top, usually performing better for structured data. Structured Streaming reuses the DataFrame API for unbounded data by treating a stream as a table that is continuously appended to."
+  },
+  {
+    "order": 8,
+    "title": "Kafka Module: Event Streaming on Top of Spark",
+    "description": "The Kafka module directly extends the Spark cluster pattern from Steps 6-7: kafka/docker-compose.yml combines the same Spark master/worker/Jupyter topology with a single-node Kafka broker running in KRaft mode (no separate Zookeeper needed, simplifying the stack). The kafka/README.md documents this combined cluster and outlines the lecture sequence: topics, producer/consumer APIs, consumer groups, and finally Spark Structured Streaming ingestion from Kafka -- explicitly bridging back to the streaming concepts introduced in Step 7's Lecture3.",
+    "nodeIds": ["document:kafka/README.md", "service:kafka/docker-compose.yml"],
+    "languageLesson": "Kafka's KRaft mode replaces the older ZooKeeper-based metadata management with a built-in Raft consensus protocol, simplifying single-broker educational setups. Combining Kafka and Spark in one Compose stack lets the notebook client act as both a Kafka producer/consumer and a Spark Structured Streaming driver."
+  },
+  {
+    "order": 9,
+    "title": "Kafka Producer, Consumer, and Consumer Groups",
+    "description": "The Kafka lectures follow the publish/subscribe model end to end. Producer.ipynb shows publishing messages first from the broker's own shell, then via the Python kafka-python client; Consumer.ipynb shows instantiating a KafkaConsumer and subscribing to topics; ConsumerGroup.ipynb demonstrates how multiple consumers coordinate to split partition consumption within a group, a key mechanism for scaling consumption horizontally.",
+    "nodeIds": [
+      "file:kafka/notebooks/Producer.ipynb",
+      "file:kafka/notebooks/Consumer.ipynb",
+      "file:kafka/notebooks/ConsumerGroup.ipynb"
+    ],
+    "languageLesson": "In Kafka's publish/subscribe model, producers append records to a topic's partitions and consumers read them independently at their own pace. A consumer group ensures each partition is read by only one consumer within the group, letting you scale throughput by adding consumers up to the partition count."
+  },
+  {
+    "order": 10,
+    "title": "Closing the Loop: Kafka into Spark Structured Streaming",
+    "description": "This capstone notebook for the Kafka module connects everything from Steps 7-9: KafkaSpark_StructuredStreaming.ipynb uses Spark's readStream.format('kafka') to turn a Kafka topic directly into a streaming DataFrame, processing the key/value/timestamp records with the same DataFrame operations taught in Step 7. It demonstrates why the course paired Kafka with a Spark cluster rather than a standalone broker -- the whole point is showing event streaming and distributed batch/stream processing as complementary technologies.",
+    "nodeIds": ["file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb"]
+  },
+  {
+    "order": 11,
+    "title": "Dask Module: A Pythonic Alternative to Spark",
+    "description": "The final module returns to distributed computing with Dask, a lighter-weight, more Pythonic alternative to Spark. dask/docker-compose.yml sets up a scheduler, scalable worker nodes, and a Jupyter client (mirroring the Spark topology from Step 6 but using Dask's own scheduler/worker model), and dask/README.md documents how to scale workers and access the Dask dashboard. This module intentionally revisits concepts from Steps 6-7 -- delayed execution, bags, and dataframes -- so students can directly compare Dask's API ergonomics against PySpark's.",
+    "nodeIds": ["document:dask/README.md", "service:dask/docker-compose.yml"]
+  },
+  {
+    "order": 12,
+    "title": "Dask: Delayed, Bags, and DataFrames",
+    "description": "The three Dask lectures mirror the Spark progression from Step 7 but with Dask's API. Lecture1.ipynb covers connecting to the cluster via a Client and basic delayed/submit/map primitives (word count, Fibonacci, computing pi -- the same exercises as PySpark's Lecture1); Lecture2.ipynb introduces Dask Bag, an API analogous to Spark RDDs, with map/filter/pluck/groupby operations; Lecture3.ipynb is the largest notebook in the module, covering dask.dataframe as a partitioned, lazy analogue to Pandas DataFrames, directly paralleling PySpark's DataFrame lecture from Step 7.",
+    "nodeIds": [
+      "file:dask/notebooks/Lecture1.ipynb",
+      "file:dask/notebooks/Lecture2.ipynb",
+      "file:dask/notebooks/Lecture3.ipynb"
+    ],
+    "languageLesson": "Dask's delayed decorator wraps a function call into a lazy task graph node instead of executing it immediately -- the computation only runs when .compute() is called, letting Dask optimize and parallelize the whole graph. Dask DataFrame partitions a large logical DataFrame into many Pandas DataFrames processed independently across workers, the same partitioning idea behind Spark DataFrames but staying closer to native Pandas semantics."
+  }
+]

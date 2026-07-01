@@ -1,0 +1,1192 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "00e5005575958042aabaf55664e96adf1ff49b83",
+  "generatedAt": "2026-07-01T14:44:37.141Z",
+  "files": {
+    "dask/docker-compose.yml": {
+      "filePath": "dask/docker-compose.yml",
+      "contentHash": "5a528df98140dc0a7b2259ed9d7c704dd90a88116bf38aaaa472e87e81d839e8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "dask/notebooks/Lecture1_solutions.ipynb": {
+      "filePath": "dask/notebooks/Lecture1_solutions.ipynb",
+      "contentHash": "ea8ea34a9dfd2f2ea45d4cdeb32060528ffcf93f2f25c609d1ee1988e57d6f61",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2643,
+      "hasStructuralAnalysis": false
+    },
+    "dask/notebooks/Lecture1.ipynb": {
+      "filePath": "dask/notebooks/Lecture1.ipynb",
+      "contentHash": "166e6464171e31bd37efbe2f099d26e5ba609b22caf6e141095055d2fccc02f8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2568,
+      "hasStructuralAnalysis": false
+    },
+    "dask/notebooks/Lecture2_solutions.ipynb": {
+      "filePath": "dask/notebooks/Lecture2_solutions.ipynb",
+      "contentHash": "8ea984535aace5da6467a97abb17447c9341c58ab41071d46649de57e729e5d6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4658,
+      "hasStructuralAnalysis": false
+    },
+    "dask/notebooks/Lecture2.ipynb": {
+      "filePath": "dask/notebooks/Lecture2.ipynb",
+      "contentHash": "ba927fef7e6c5f5c3aa77bb9c7c20ed43699c3124b23f239086b2ebf0dbd4f47",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3504,
+      "hasStructuralAnalysis": false
+    },
+    "dask/notebooks/Lecture3_solutions.ipynb": {
+      "filePath": "dask/notebooks/Lecture3_solutions.ipynb",
+      "contentHash": "6f81ff938fca190ee21b36b996122b3cd2cd443e37343a0dce1ad034bba30fce",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15219,
+      "hasStructuralAnalysis": false
+    },
+    "dask/notebooks/Lecture3.ipynb": {
+      "filePath": "dask/notebooks/Lecture3.ipynb",
+      "contentHash": "c0148f1373c4f3fc0a5c31a5994ebdde348c84b0cb659abe073e4236bc90a4bb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1192,
+      "hasStructuralAnalysis": false
+    },
+    "dask/README.md": {
+      "filePath": "dask/README.md",
+      "contentHash": "f1f8c495858b245617197b7386d15403d94fa578037d156dd4a5f5ff0c0455f9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 81,
+      "hasStructuralAnalysis": true
+    },
+    "kafka/docker-compose.yml": {
+      "filePath": "kafka/docker-compose.yml",
+      "contentHash": "22fe10ae34a89406c906be77d34f869350a76cd933fe6ce42267b1749daa0f33",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "kafka/notebooks/Consumer.ipynb": {
+      "filePath": "kafka/notebooks/Consumer.ipynb",
+      "contentHash": "8b2c3d892f5ec47fa82d870610489990e25044704df58eb0c588c77649217140",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 526,
+      "hasStructuralAnalysis": false
+    },
+    "kafka/notebooks/ConsumerGroup.ipynb": {
+      "filePath": "kafka/notebooks/ConsumerGroup.ipynb",
+      "contentHash": "e0343261d1516a44bad02facccafc4b131da851b2e29b347b00cd2a358acde1c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 120,
+      "hasStructuralAnalysis": false
+    },
+    "kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb": {
+      "filePath": "kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "contentHash": "6c94efad174c1a285cab2bab812bb01882d3a0d312cd3440183646cb103987c7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 421,
+      "hasStructuralAnalysis": false
+    },
+    "kafka/notebooks/Producer.ipynb": {
+      "filePath": "kafka/notebooks/Producer.ipynb",
+      "contentHash": "c555865945684944a745a222c27550e8756ea9c11bd0fd4fa2d3d460625decf0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 530,
+      "hasStructuralAnalysis": false
+    },
+    "kafka/README.md": {
+      "filePath": "kafka/README.md",
+      "contentHash": "a5164840237e13b5e1108b57e6ca23a12052c0fbbc4766068b4305a530ff0768",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 80,
+      "hasStructuralAnalysis": true
+    },
+    "mysql/docker-compose.yml": {
+      "filePath": "mysql/docker-compose.yml",
+      "contentHash": "224619d2268267b1dfbbdb08c19f3a29e10914eb448f2a8016baa4f03bc0dd6d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "mysql/docker/mapd_notebook.Dockerfile": {
+      "filePath": "mysql/docker/mapd_notebook.Dockerfile",
+      "contentHash": "2df993db37d27372d1d554dd03ca1bdcd5e71dce6ea863f3415a5d33f49f04ac",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": false
+    },
+    "mysql/notebooks/MySQL_solutions.ipynb": {
+      "filePath": "mysql/notebooks/MySQL_solutions.ipynb",
+      "contentHash": "e71da7e7d4f614a0d8699d2d158bcfe297057cebafc7e88678ab7ca063a359da",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 20232,
+      "hasStructuralAnalysis": false
+    },
+    "mysql/notebooks/MySQL.ipynb": {
+      "filePath": "mysql/notebooks/MySQL.ipynb",
+      "contentHash": "6e5cf6cb1223636b8fe4453bbed77d9eb8a416dad728079171b6ae0156fcf891",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2787,
+      "hasStructuralAnalysis": false
+    },
+    "mysql/README.md": {
+      "filePath": "mysql/README.md",
+      "contentHash": "6da42239264d259a6e5c2ff214f84f6fb66d2baff519d735693d0dc3bcf73dc6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/00_single_threaded.py": {
+      "filePath": "parallel/00_single_threaded.py",
+      "contentHash": "46a32994e052c7c55f0e27bf65327266ebaea7871704b9688786643a481119f0",
+      "functions": [
+        {
+          "name": "my_sum",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/01_multi_threaded.py": {
+      "filePath": "parallel/01_multi_threaded.py",
+      "contentHash": "d73d309fa8e7d3fee0c06f79085b2d915448f307dc419871d032d8d71c4a6458",
+      "functions": [
+        {
+          "name": "my_sum",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "Thread"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum"
+      ],
+      "totalLines": 52,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/02_multi_threaded_local_data.py": {
+      "filePath": "parallel/02_multi_threaded_local_data.py",
+      "contentHash": "7eb2720700c6fedac17224f373065aba11427720f0fa182de7c151c13f8c0949",
+      "functions": [
+        {
+          "name": "my_sum",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "Thread"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum"
+      ],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/03_multi_threaded_nolock.py": {
+      "filePath": "parallel/03_multi_threaded_nolock.py",
+      "contentHash": "e3621f53925832a4fbb230ebffb43a9c3147ecbb7653a359ad5794fbf49abbf0",
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "params": [
+            "a",
+            "b",
+            "m"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "Thread"
+          ]
+        },
+        {
+          "source": "colorama",
+          "specifiers": [
+            "Fore",
+            "Style"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum_mod"
+      ],
+      "totalLines": 70,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/03extra_minimal_race_condition.py": {
+      "filePath": "parallel/03extra_minimal_race_condition.py",
+      "contentHash": "1e89832a60b17a0c38dce670f2fd51b481a3b0b461a2b0441b6014d2e9f47fa5",
+      "functions": [
+        {
+          "name": "increment",
+          "params": [
+            "max_val"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        }
+      ],
+      "exports": [
+        "increment"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/04_multi_threaded_lock.py": {
+      "filePath": "parallel/04_multi_threaded_lock.py",
+      "contentHash": "6bc00a48c716a5c7ad5e670c1e67a2dd587cb7820b1ed5528cc28b9e9fa84a46",
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "params": [
+            "the_lock",
+            "a",
+            "b",
+            "m"
+          ],
+          "exported": true,
+          "lineCount": 32
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "Thread"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "Lock"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum_mod"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/04extra_minimal_race_condition_with_lock.py": {
+      "filePath": "parallel/04extra_minimal_race_condition_with_lock.py",
+      "contentHash": "0098f50ceb1e9af89ae4478e2fff5c499adb1dc3901ebc123433cd0bdc5b6b7b",
+      "functions": [
+        {
+          "name": "increment",
+          "params": [
+            "max_val"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        }
+      ],
+      "exports": [
+        "increment"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/05_multi_threaded_pool_lock.py": {
+      "filePath": "parallel/05_multi_threaded_pool_lock.py",
+      "contentHash": "c69816e9e11a651ceea3879b3533db265b115cab9e8f628312e8870ed1f876b0",
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "params": [
+            "the_lock",
+            "a",
+            "b",
+            "m"
+          ],
+          "exported": true,
+          "lineCount": 27
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "wait"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "Lock"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum_mod"
+      ],
+      "totalLines": 84,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/06_multi_threaded_pool_queue.py": {
+      "filePath": "parallel/06_multi_threaded_pool_queue.py",
+      "contentHash": "62153e13c318bab9ead6fb908dd2e1813642604d6495c8c1913deb889c4c34cb",
+      "functions": [
+        {
+          "name": "my_sum_mod",
+          "params": [
+            "the_queue",
+            "a",
+            "b",
+            "m"
+          ],
+          "exported": true,
+          "lineCount": 32
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "wait"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "queue",
+          "specifiers": [
+            "queue"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum_mod"
+      ],
+      "totalLines": 87,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/07_multi_processing.py": {
+      "filePath": "parallel/07_multi_processing.py",
+      "contentHash": "f706d667747f9fe660ceb8da2f5675acde71fb97027df43a0b9c9568df54673b",
+      "functions": [
+        {
+          "name": "my_sum",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Process"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum"
+      ],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/08_multi_processing_pool_starmap.py": {
+      "filePath": "parallel/08_multi_processing_pool_starmap.py",
+      "contentHash": "d864cf84496881a0478b07f4560238548e15a59d8ac9ed25f070c11e08a5c081",
+      "functions": [
+        {
+          "name": "my_sum",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum"
+      ],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/09_multi_processing_pool_starmapasync.py": {
+      "filePath": "parallel/09_multi_processing_pool_starmapasync.py",
+      "contentHash": "a4e8d2e422bb6337e01af370cd4ddeea89369f4778bbbd354d6b5b775651703d",
+      "functions": [
+        {
+          "name": "my_sum",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        }
+      ],
+      "exports": [
+        "my_sum"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/cpu_intensive_multiprocessing.py": {
+      "filePath": "parallel/cpu_intensive_multiprocessing.py",
+      "contentHash": "21ecf02b217c77e871fe8b9593244ea98f3d17b099b32b06b7ab44fff4738cb1",
+      "functions": [
+        {
+          "name": "f",
+          "params": [
+            "x"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "cpu_function",
+          "params": [
+            "seed"
+          ],
+          "exported": true,
+          "lineCount": 25
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor",
+            "ProcessPoolExecutor",
+            "wait"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        }
+      ],
+      "exports": [
+        "f",
+        "cpu_function"
+      ],
+      "totalLines": 96,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/cpu_intensive_threading.py": {
+      "filePath": "parallel/cpu_intensive_threading.py",
+      "contentHash": "3c85043aa645c8cb65b6d9f45bf278e1826b8c1d4161776a68b770a84988a791",
+      "functions": [
+        {
+          "name": "f",
+          "params": [
+            "x"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "cpu_function",
+          "params": [
+            "seed"
+          ],
+          "exported": true,
+          "lineCount": 25
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor",
+            "ProcessPoolExecutor",
+            "wait"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        }
+      ],
+      "exports": [
+        "f",
+        "cpu_function"
+      ],
+      "totalLines": 79,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/cpu_intensive.py": {
+      "filePath": "parallel/cpu_intensive.py",
+      "contentHash": "9bbf05c8698e0a0a058ba54d74c93ebf461880dedbeca018bf5f8f20f9606e11",
+      "functions": [
+        {
+          "name": "f",
+          "params": [
+            "x"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "cpu_function",
+          "params": [
+            "seed"
+          ],
+          "exported": true,
+          "lineCount": 25
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor",
+            "ProcessPoolExecutor",
+            "wait"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        }
+      ],
+      "exports": [
+        "f",
+        "cpu_function"
+      ],
+      "totalLines": 68,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/io_intensive_multiprocessing.py": {
+      "filePath": "parallel/io_intensive_multiprocessing.py",
+      "contentHash": "4342127c9b6a46b2fafb0aabf6ac92e80df4156c42d72298b8726e47d6ef4ff2",
+      "functions": [
+        {
+          "name": "io_function",
+          "params": [
+            "the_url"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "urllib.request",
+          "specifiers": [
+            "urllib.request"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor",
+            "ProcessPoolExecutor",
+            "wait"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        }
+      ],
+      "exports": [
+        "io_function"
+      ],
+      "totalLines": 96,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/io_intensive_threading.py": {
+      "filePath": "parallel/io_intensive_threading.py",
+      "contentHash": "cc938d0309701fb49f66ebc44227e6cb3fc66db7c0c9e692c9eda766d4064c33",
+      "functions": [
+        {
+          "name": "io_function",
+          "params": [
+            "the_url"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "urllib.request",
+          "specifiers": [
+            "urllib.request"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor",
+            "ProcessPoolExecutor",
+            "wait"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        }
+      ],
+      "exports": [
+        "io_function"
+      ],
+      "totalLines": 80,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/io_intensive.py": {
+      "filePath": "parallel/io_intensive.py",
+      "contentHash": "9268948e8ec194163d394a4fb120d57281325d7f21eb8e5ef55572a511f310d7",
+      "functions": [
+        {
+          "name": "io_function",
+          "params": [
+            "the_url"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "urllib.request",
+          "specifiers": [
+            "urllib.request"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor",
+            "ProcessPoolExecutor",
+            "wait"
+          ]
+        },
+        {
+          "source": "multiprocessing",
+          "specifiers": [
+            "Pool"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        }
+      ],
+      "exports": [
+        "io_function"
+      ],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "parallel/README.md": {
+      "filePath": "parallel/README.md",
+      "contentHash": "f65e6cb91f48cbd3902a80da39ab67ba88cdb0c61fea8a108b13718438088961",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "b2b74bf7fe54a3fb213341c313664849035e54906779192243a25958ffbd193b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "spark/docker-compose.yml": {
+      "filePath": "spark/docker-compose.yml",
+      "contentHash": "f5ac0e15dbdee1f469c48f314a814c32d784244b34f1c2de1371edbb8c7efc87",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "spark/notebooks/Lecture1_solutions.ipynb": {
+      "filePath": "spark/notebooks/Lecture1_solutions.ipynb",
+      "contentHash": "923acaaa19a10aabd4561e2c4e8acb1f7149c0e0e707ca254180c4ce364e7c5d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2290,
+      "hasStructuralAnalysis": false
+    },
+    "spark/notebooks/Lecture1.ipynb": {
+      "filePath": "spark/notebooks/Lecture1.ipynb",
+      "contentHash": "0231d79c1b47efbcfc4aa7ffbe0710b16d1fb2b19f569877c98153db16b93825",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2257,
+      "hasStructuralAnalysis": false
+    },
+    "spark/notebooks/Lecture2_solutions.ipynb": {
+      "filePath": "spark/notebooks/Lecture2_solutions.ipynb",
+      "contentHash": "058474838c6cb6c353c142b9b708b94aaa8483e26f00ef7af334bf1211124e56",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2747,
+      "hasStructuralAnalysis": false
+    },
+    "spark/notebooks/Lecture2.ipynb": {
+      "filePath": "spark/notebooks/Lecture2.ipynb",
+      "contentHash": "bb323d318b30e2a530da23efa62a4801383a78f19092bc9451a5ce2520293e72",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2696,
+      "hasStructuralAnalysis": false
+    },
+    "spark/notebooks/Lecture3_solutions.ipynb": {
+      "filePath": "spark/notebooks/Lecture3_solutions.ipynb",
+      "contentHash": "5b44a49df75253b2663f012238565e08e44f123054f1a2820072e72b549da96a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1282,
+      "hasStructuralAnalysis": false
+    },
+    "spark/notebooks/Lecture3.ipynb": {
+      "filePath": "spark/notebooks/Lecture3.ipynb",
+      "contentHash": "b63c949f1ab33f043c032f8460e0664fc68bf5aaad8ea0e56d82d6a253c8203d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1936,
+      "hasStructuralAnalysis": false
+    },
+    "spark/notebooks/utils/producer.py": {
+      "filePath": "spark/notebooks/utils/producer.py",
+      "contentHash": "3298d89da34770a24a8fe01381b96f4a4f4cf4e1c7ebe69c250152ad541720e5",
+      "functions": [
+        {
+          "name": "send_messages",
+          "params": [
+            "client_socket"
+          ],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "socket",
+          "specifiers": [
+            "socket"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        }
+      ],
+      "exports": [
+        "send_messages"
+      ],
+      "totalLines": 56,
+      "hasStructuralAnalysis": true
+    },
+    "spark/README.md": {
+      "filePath": "spark/README.md",
+      "contentHash": "369f5f3894ce2ebd8e1b6fad39df4884a06ad0388f6d3c333dcb3189b54f1fc2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 84,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

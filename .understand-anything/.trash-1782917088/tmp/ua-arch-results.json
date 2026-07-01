@@ -1,0 +1,322 @@
+{
+  "scriptCompleted": true,
+  "directoryGroups": {
+    "dask": [
+      "service:dask/docker-compose.yml",
+      "file:dask/notebooks/Lecture1_solutions.ipynb",
+      "file:dask/notebooks/Lecture1.ipynb",
+      "file:dask/notebooks/Lecture2_solutions.ipynb",
+      "file:dask/notebooks/Lecture2.ipynb",
+      "file:dask/notebooks/Lecture3_solutions.ipynb",
+      "file:dask/notebooks/Lecture3.ipynb",
+      "document:dask/README.md"
+    ],
+    "kafka": [
+      "service:kafka/docker-compose.yml",
+      "file:kafka/notebooks/Consumer.ipynb",
+      "file:kafka/notebooks/ConsumerGroup.ipynb",
+      "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "file:kafka/notebooks/Producer.ipynb",
+      "document:kafka/README.md"
+    ],
+    "mysql": [
+      "service:mysql/docker-compose.yml",
+      "file:mysql/docker/mapd_notebook.Dockerfile",
+      "file:mysql/notebooks/MySQL_solutions.ipynb",
+      "file:mysql/notebooks/MySQL.ipynb",
+      "document:mysql/README.md"
+    ],
+    "parallel": [
+      "file:parallel/00_single_threaded.py",
+      "function:parallel/00_single_threaded.py:my_sum",
+      "file:parallel/01_multi_threaded.py",
+      "function:parallel/01_multi_threaded.py:my_sum",
+      "file:parallel/02_multi_threaded_local_data.py",
+      "function:parallel/02_multi_threaded_local_data.py:my_sum",
+      "file:parallel/03_multi_threaded_nolock.py",
+      "function:parallel/03_multi_threaded_nolock.py:my_sum_mod",
+      "file:parallel/03extra_minimal_race_condition.py",
+      "function:parallel/03extra_minimal_race_condition.py:increment",
+      "file:parallel/04_multi_threaded_lock.py",
+      "function:parallel/04_multi_threaded_lock.py:my_sum_mod",
+      "file:parallel/04extra_minimal_race_condition_with_lock.py",
+      "function:parallel/04extra_minimal_race_condition_with_lock.py:increment",
+      "file:parallel/05_multi_threaded_pool_lock.py",
+      "function:parallel/05_multi_threaded_pool_lock.py:my_sum_mod",
+      "file:parallel/06_multi_threaded_pool_queue.py",
+      "function:parallel/06_multi_threaded_pool_queue.py:my_sum_mod",
+      "file:parallel/07_multi_processing.py",
+      "function:parallel/07_multi_processing.py:my_sum",
+      "file:parallel/08_multi_processing_pool_starmap.py",
+      "function:parallel/08_multi_processing_pool_starmap.py:my_sum",
+      "file:parallel/09_multi_processing_pool_starmapasync.py",
+      "function:parallel/09_multi_processing_pool_starmapasync.py:my_sum",
+      "file:parallel/cpu_intensive.py",
+      "function:parallel/cpu_intensive.py:f",
+      "function:parallel/cpu_intensive.py:cpu_function",
+      "file:parallel/cpu_intensive_threading.py",
+      "function:parallel/cpu_intensive_threading.py:f",
+      "function:parallel/cpu_intensive_threading.py:cpu_function",
+      "file:parallel/cpu_intensive_multiprocessing.py",
+      "function:parallel/cpu_intensive_multiprocessing.py:f",
+      "function:parallel/cpu_intensive_multiprocessing.py:cpu_function",
+      "file:parallel/io_intensive.py",
+      "function:parallel/io_intensive.py:io_function",
+      "file:parallel/io_intensive_threading.py",
+      "function:parallel/io_intensive_threading.py:io_function",
+      "file:parallel/io_intensive_multiprocessing.py",
+      "function:parallel/io_intensive_multiprocessing.py:io_function",
+      "document:parallel/README.md"
+    ],
+    "md": [
+      "document:README.md"
+    ],
+    "spark": [
+      "service:spark/docker-compose.yml",
+      "service:spark/docker-compose.yml:spark-master",
+      "service:spark/docker-compose.yml:spark-worker",
+      "service:spark/docker-compose.yml:jupyter-notebook",
+      "document:spark/README.md",
+      "file:spark/notebooks/Lecture1.ipynb",
+      "file:spark/notebooks/Lecture1_solutions.ipynb",
+      "file:spark/notebooks/Lecture2.ipynb",
+      "file:spark/notebooks/Lecture2_solutions.ipynb",
+      "file:spark/notebooks/Lecture3.ipynb",
+      "file:spark/notebooks/Lecture3_solutions.ipynb",
+      "file:spark/notebooks/utils/producer.py",
+      "function:spark/notebooks/utils/producer.py:send_messages"
+    ]
+  },
+  "nodeTypeGroups": {
+    "service": [
+      "service:dask/docker-compose.yml",
+      "service:kafka/docker-compose.yml",
+      "service:mysql/docker-compose.yml",
+      "service:spark/docker-compose.yml",
+      "service:spark/docker-compose.yml:spark-master",
+      "service:spark/docker-compose.yml:spark-worker",
+      "service:spark/docker-compose.yml:jupyter-notebook"
+    ],
+    "file": [
+      "file:dask/notebooks/Lecture1_solutions.ipynb",
+      "file:dask/notebooks/Lecture1.ipynb",
+      "file:dask/notebooks/Lecture2_solutions.ipynb",
+      "file:dask/notebooks/Lecture2.ipynb",
+      "file:dask/notebooks/Lecture3_solutions.ipynb",
+      "file:dask/notebooks/Lecture3.ipynb",
+      "file:kafka/notebooks/Consumer.ipynb",
+      "file:kafka/notebooks/ConsumerGroup.ipynb",
+      "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "file:kafka/notebooks/Producer.ipynb",
+      "file:mysql/docker/mapd_notebook.Dockerfile",
+      "file:mysql/notebooks/MySQL_solutions.ipynb",
+      "file:mysql/notebooks/MySQL.ipynb",
+      "file:parallel/00_single_threaded.py",
+      "file:parallel/01_multi_threaded.py",
+      "file:parallel/02_multi_threaded_local_data.py",
+      "file:parallel/03_multi_threaded_nolock.py",
+      "file:parallel/03extra_minimal_race_condition.py",
+      "file:parallel/04_multi_threaded_lock.py",
+      "file:parallel/04extra_minimal_race_condition_with_lock.py",
+      "file:parallel/05_multi_threaded_pool_lock.py",
+      "file:parallel/06_multi_threaded_pool_queue.py",
+      "file:parallel/07_multi_processing.py",
+      "file:parallel/08_multi_processing_pool_starmap.py",
+      "file:parallel/09_multi_processing_pool_starmapasync.py",
+      "file:parallel/cpu_intensive.py",
+      "file:parallel/cpu_intensive_threading.py",
+      "file:parallel/cpu_intensive_multiprocessing.py",
+      "file:parallel/io_intensive.py",
+      "file:parallel/io_intensive_threading.py",
+      "file:parallel/io_intensive_multiprocessing.py",
+      "file:spark/notebooks/Lecture1.ipynb",
+      "file:spark/notebooks/Lecture1_solutions.ipynb",
+      "file:spark/notebooks/Lecture2.ipynb",
+      "file:spark/notebooks/Lecture2_solutions.ipynb",
+      "file:spark/notebooks/Lecture3.ipynb",
+      "file:spark/notebooks/Lecture3_solutions.ipynb",
+      "file:spark/notebooks/utils/producer.py"
+    ],
+    "document": [
+      "document:dask/README.md",
+      "document:kafka/README.md",
+      "document:mysql/README.md",
+      "document:parallel/README.md",
+      "document:README.md",
+      "document:spark/README.md"
+    ],
+    "function": [
+      "function:parallel/00_single_threaded.py:my_sum",
+      "function:parallel/01_multi_threaded.py:my_sum",
+      "function:parallel/02_multi_threaded_local_data.py:my_sum",
+      "function:parallel/03_multi_threaded_nolock.py:my_sum_mod",
+      "function:parallel/03extra_minimal_race_condition.py:increment",
+      "function:parallel/04_multi_threaded_lock.py:my_sum_mod",
+      "function:parallel/04extra_minimal_race_condition_with_lock.py:increment",
+      "function:parallel/05_multi_threaded_pool_lock.py:my_sum_mod",
+      "function:parallel/06_multi_threaded_pool_queue.py:my_sum_mod",
+      "function:parallel/07_multi_processing.py:my_sum",
+      "function:parallel/08_multi_processing_pool_starmap.py:my_sum",
+      "function:parallel/09_multi_processing_pool_starmapasync.py:my_sum",
+      "function:parallel/cpu_intensive.py:f",
+      "function:parallel/cpu_intensive.py:cpu_function",
+      "function:parallel/cpu_intensive_threading.py:f",
+      "function:parallel/cpu_intensive_threading.py:cpu_function",
+      "function:parallel/cpu_intensive_multiprocessing.py:f",
+      "function:parallel/cpu_intensive_multiprocessing.py:cpu_function",
+      "function:parallel/io_intensive.py:io_function",
+      "function:parallel/io_intensive_threading.py:io_function",
+      "function:parallel/io_intensive_multiprocessing.py:io_function",
+      "function:spark/notebooks/utils/producer.py:send_messages"
+    ]
+  },
+  "crossCategoryEdges": [
+    {
+      "fromType": "file",
+      "toType": "function",
+      "edgeType": "contains",
+      "count": 22
+    },
+    {
+      "fromType": "document",
+      "toType": "file",
+      "edgeType": "documents",
+      "count": 18
+    },
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "related",
+      "count": 15
+    },
+    {
+      "fromType": "service",
+      "toType": "file",
+      "edgeType": "deploys",
+      "count": 11
+    },
+    {
+      "fromType": "file",
+      "toType": "function",
+      "edgeType": "exports",
+      "count": 6
+    },
+    {
+      "fromType": "service",
+      "toType": "service",
+      "edgeType": "depends_on",
+      "count": 5
+    },
+    {
+      "fromType": "document",
+      "toType": "service",
+      "edgeType": "documents",
+      "count": 4
+    },
+    {
+      "fromType": "document",
+      "toType": "document",
+      "edgeType": "related",
+      "count": 2
+    },
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "depends_on",
+      "count": 2
+    },
+    {
+      "fromType": "service",
+      "toType": "file",
+      "edgeType": "depends_on",
+      "count": 1
+    }
+  ],
+  "interGroupImports": [],
+  "intraGroupDensity": {
+    "dask": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "kafka": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "mysql": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "parallel": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "md": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "spark": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    }
+  },
+  "patternMatches": {
+    "dask": "infrastructure",
+    "kafka": "infrastructure",
+    "mysql": "infrastructure",
+    "parallel": "documentation",
+    "md": "documentation",
+    "spark": "infrastructure"
+  },
+  "deploymentTopology": {
+    "hasDockerfile": true,
+    "hasCompose": true,
+    "hasK8s": false,
+    "hasTerraform": false,
+    "hasCI": false,
+    "infraFiles": [
+      "dask/docker-compose.yml",
+      "kafka/docker-compose.yml",
+      "mysql/docker-compose.yml",
+      "mysql/docker/mapd_notebook.Dockerfile",
+      "spark/docker-compose.yml"
+    ]
+  },
+  "dataPipeline": {
+    "schemaFiles": [],
+    "migrationFiles": [],
+    "dataModelFiles": [],
+    "apiHandlerFiles": []
+  },
+  "docCoverage": {
+    "groupsWithDocs": 6,
+    "totalGroups": 6,
+    "coverageRatio": 1,
+    "undocumentedGroups": []
+  },
+  "dependencyDirection": [],
+  "fileStats": {
+    "totalFileNodes": 73,
+    "filesPerGroup": {
+      "dask": 8,
+      "kafka": 6,
+      "mysql": 5,
+      "parallel": 40,
+      "md": 1,
+      "spark": 13
+    },
+    "nodeTypeCounts": {
+      "service": 7,
+      "file": 38,
+      "document": 6,
+      "function": 22
+    }
+  },
+  "fileFanIn": {},
+  "fileFanOut": {}
+}

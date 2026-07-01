@@ -1,0 +1,557 @@
+{
+  "nodes": [
+    {
+      "id": "service:dask/docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "dask/docker-compose.yml",
+      "summary": "Docker Compose setup for the Dask module defining a scheduler, one or more scalable worker nodes, and a Jupyter notebook client, all pulled from the jpazzini/mapd-b registry and sharing the workspace via a bind mount.",
+      "tags": ["orchestration", "infrastructure", "containerization", "dask"],
+      "complexity": "simple",
+      "languageNotes": "Docker Compose service definitions with environment-driven worker sizing (DASK_WORKER_CORES, DASK_WORKER_MEMORY) allow scaling with `docker compose up --scale dask-worker=N`."
+    },
+    {
+      "id": "file:dask/notebooks/Lecture1_solutions.ipynb",
+      "type": "file",
+      "name": "Lecture1_solutions.ipynb",
+      "filePath": "dask/notebooks/Lecture1_solutions.ipynb",
+      "summary": "Worked solutions notebook for Dask Lecture 1, covering connecting to a Dask cluster, basic delayed/submit/map primitives, and exercises such as word count, Fibonacci, and computing pi.",
+      "tags": ["notebook", "dask", "solutions", "distributed-computing", "tutorial"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:dask/notebooks/Lecture1.ipynb",
+      "type": "file",
+      "name": "Lecture1.ipynb",
+      "filePath": "dask/notebooks/Lecture1.ipynb",
+      "summary": "Introductory notebook on parallel and distributed computing with Dask, covering cluster connection via a scheduler Client, the Dask WebUI dashboard, and simple parallelization patterns for Python functions (delayed, submit, map).",
+      "tags": ["notebook", "dask", "tutorial", "distributed-computing", "cluster"],
+      "complexity": "complex",
+      "languageNotes": "Introduces Dask as a Python-native scheduler contrasted with Hadoop MapReduce and Spark/Scala, and demonstrates the scheduler dashboard exposed on port 8787."
+    },
+    {
+      "id": "file:dask/notebooks/Lecture2_solutions.ipynb",
+      "type": "file",
+      "name": "Lecture2_solutions.ipynb",
+      "filePath": "dask/notebooks/Lecture2_solutions.ipynb",
+      "summary": "Worked solutions notebook for Dask Lecture 2, exercising Dask Bag creation and operations such as map, filter, pluck, flatten, groupby, and foldby.",
+      "tags": ["notebook", "dask", "solutions", "dask-bag", "tutorial"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:dask/notebooks/Lecture2.ipynb",
+      "type": "file",
+      "name": "Lecture2.ipynb",
+      "filePath": "dask/notebooks/Lecture2.ipynb",
+      "summary": "Notebook introducing Dask data structures (bag, array, dataframe) with a deep dive into Dask Bag creation from Python sequences/files and core operations analogous to PySpark RDDs.",
+      "tags": ["notebook", "dask", "tutorial", "dask-bag", "distributed-computing"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:dask/notebooks/Lecture3_solutions.ipynb",
+      "type": "file",
+      "name": "Lecture3_solutions.ipynb",
+      "filePath": "dask/notebooks/Lecture3_solutions.ipynb",
+      "summary": "Worked solutions notebook for Dask Lecture 3, the largest notebook in the module, covering Dask DataFrame construction, partitioning, and operations compared to Pandas DataFrames.",
+      "tags": ["notebook", "dask", "solutions", "dataframe", "tutorial"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:dask/notebooks/Lecture3.ipynb",
+      "type": "file",
+      "name": "Lecture3.ipynb",
+      "filePath": "dask/notebooks/Lecture3.ipynb",
+      "summary": "Notebook continuing the Dask data structures topic, focused on the dask.dataframe API, reading multiple CSV files via glob patterns, data partitioning concepts, and differences from Pandas DataFrames.",
+      "tags": ["notebook", "dask", "tutorial", "dataframe", "partitioning"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:dask/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "dask/README.md",
+      "summary": "Module overview for the Dask lecture series, explaining the Docker Compose based cluster setup (scheduler, workers, Jupyter client), how to scale workers, access the dashboard, and a per-lecture topic outline.",
+      "tags": ["documentation", "entry-point", "dask", "setup-guide"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:kafka/docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "kafka/docker-compose.yml",
+      "summary": "Docker Compose setup for the Kafka module combining a Spark master/worker cluster with a single-node Apache Kafka broker (KRaft mode, no Zookeeper) and a Jupyter notebook client for producer/consumer/streaming exercises.",
+      "tags": ["orchestration", "infrastructure", "containerization", "kafka", "spark"],
+      "complexity": "moderate",
+      "languageNotes": "Uses Kafka's KRaft consensus protocol (KAFKA_PROCESS_ROLES=broker,controller) instead of Zookeeper, running a self-managed metadata quorum on a single node."
+    },
+    {
+      "id": "file:kafka/notebooks/Consumer.ipynb",
+      "type": "file",
+      "name": "Consumer.ipynb",
+      "filePath": "kafka/notebooks/Consumer.ipynb",
+      "summary": "Notebook teaching the Kafka Consumer API via the kafka-python module, covering instantiating a KafkaConsumer, inspecting available topics, and subscribing to topics under the publish/subscribe model.",
+      "tags": ["notebook", "kafka", "consumer", "tutorial", "pub-sub"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:kafka/notebooks/ConsumerGroup.ipynb",
+      "type": "file",
+      "name": "ConsumerGroup.ipynb",
+      "filePath": "kafka/notebooks/ConsumerGroup.ipynb",
+      "summary": "Short notebook demonstrating Kafka consumer groups, showing how multiple consumers coordinate to share partition consumption of a topic.",
+      "tags": ["notebook", "kafka", "consumer-group", "tutorial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "type": "file",
+      "name": "KafkaSpark_StructuredStreaming.ipynb",
+      "filePath": "kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "summary": "Notebook integrating Kafka with Spark Structured Streaming, reading a Kafka topic into a streaming DataFrame via readStream/format('kafka') and processing the resulting key/value/timestamp records.",
+      "tags": ["notebook", "kafka", "spark", "structured-streaming", "tutorial"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:kafka/notebooks/Producer.ipynb",
+      "type": "file",
+      "name": "Producer.ipynb",
+      "filePath": "kafka/notebooks/Producer.ipynb",
+      "summary": "Notebook teaching Kafka Producer usage, first interacting with the Producer from the shell inside the kafka-broker container, then via Pythonic client APIs to publish data to a topic.",
+      "tags": ["notebook", "kafka", "producer", "tutorial"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:kafka/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "kafka/README.md",
+      "summary": "Module overview for the Kafka lecture, describing the Docker Compose cluster combining Spark master/worker nodes with a Kafka broker and Jupyter client, scaling instructions, dashboard ports, and lecture topic outline (topics, producer/consumer, consumer groups, Spark Structured Streaming ingestion).",
+      "tags": ["documentation", "entry-point", "kafka", "setup-guide"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:mysql/docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "mysql/docker-compose.yml",
+      "summary": "Docker Compose setup for the MySQL module, running a MySQL 9.6 database server and a locally-built Jupyter notebook client image (mapd_notebook) sharing the workspace directory.",
+      "tags": ["orchestration", "infrastructure", "containerization", "mysql", "database"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:mysql/docker/mapd_notebook.Dockerfile",
+      "type": "file",
+      "name": "mapd_notebook.Dockerfile",
+      "filePath": "mysql/docker/mapd_notebook.Dockerfile",
+      "summary": "Dockerfile building the Jupyter notebook client image for the MySQL module on top of python:3.14.2-slim, installing notebook, matplotlib, SQLAlchemy, ipython-sql, mysql-connector-python, and pandas, and launching Jupyter Notebook on port 8888 without a token.",
+      "tags": ["containerization", "infrastructure", "docker", "jupyter", "mysql"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:mysql/notebooks/MySQL_solutions.ipynb",
+      "type": "file",
+      "name": "MySQL_solutions.ipynb",
+      "filePath": "mysql/notebooks/MySQL_solutions.ipynb",
+      "summary": "Extensive worked solutions notebook for the MySQL/RDBMS module, the largest file in the project, covering connecting to MySQL, running SQL queries via mysql.connector and ipython-sql, and solving exercises against the IMDb dataset.",
+      "tags": ["notebook", "mysql", "sql", "solutions", "rdbms", "tutorial"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:mysql/notebooks/MySQL.ipynb",
+      "type": "file",
+      "name": "MySQL.ipynb",
+      "filePath": "mysql/notebooks/MySQL.ipynb",
+      "summary": "Introductory notebook on RDBMS concepts using MySQL, covering creating a connection to the MySQL Docker container (interactively and via mysql.connector), running basic SQL commands, and querying the IMDb dataset.",
+      "tags": ["notebook", "mysql", "sql", "rdbms", "tutorial"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:mysql/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "mysql/README.md",
+      "summary": "Module overview for the SQL/MySQL lecture, explaining the two-node Docker Compose setup (MySQL server plus Jupyter client built from mapd_notebook.Dockerfile), startup/shutdown instructions, and prerequisites including downloading the IMDb_pruned.sql dataset.",
+      "tags": ["documentation", "entry-point", "mysql", "setup-guide"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/00_single_threaded.py",
+      "type": "file",
+      "name": "00_single_threaded.py",
+      "filePath": "parallel/00_single_threaded.py",
+      "summary": "Baseline script that sums a large range of integers single-threaded and times the execution, used as a performance reference point before introducing threading.",
+      "tags": ["parallel-programming", "baseline", "benchmarking", "tutorial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:parallel/00_single_threaded.py:my_sum",
+      "type": "function",
+      "name": "my_sum",
+      "filePath": "parallel/00_single_threaded.py",
+      "lineRange": [4, 9],
+      "summary": "Sums integers in the range [a, b) in a simple loop and prints the result.",
+      "tags": ["utility", "sequential"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/01_multi_threaded.py",
+      "type": "file",
+      "name": "01_multi_threaded.py",
+      "filePath": "parallel/01_multi_threaded.py",
+      "summary": "Demonstrates basic Python multithreading by splitting the same summation workload across two Thread instances running the shared my_sum function concurrently, with start/join semantics explained in comments.",
+      "tags": ["parallel-programming", "threading", "concurrency", "tutorial"],
+      "complexity": "simple",
+      "languageNotes": "Illustrates non-blocking thread.start() versus blocking thread.join() semantics in Python's threading module."
+    },
+    {
+      "id": "function:parallel/01_multi_threaded.py:my_sum",
+      "type": "function",
+      "name": "my_sum",
+      "filePath": "parallel/01_multi_threaded.py",
+      "lineRange": [5, 10],
+      "summary": "Sums integers in the range [a, b) and prints the result; invoked concurrently by two threads splitting the workload in half.",
+      "tags": ["utility", "thread-target"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/02_multi_threaded_local_data.py",
+      "type": "file",
+      "name": "02_multi_threaded_local_data.py",
+      "filePath": "parallel/02_multi_threaded_local_data.py",
+      "summary": "Variant of the multithreaded summation example that introduces threading.local() to illustrate (and contrast against) explicit thread-local storage, though the accumulator is still a plain local variable in practice.",
+      "tags": ["parallel-programming", "threading", "thread-local-storage", "tutorial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:parallel/02_multi_threaded_local_data.py:my_sum",
+      "type": "function",
+      "name": "my_sum",
+      "filePath": "parallel/02_multi_threaded_local_data.py",
+      "lineRange": [6, 16],
+      "summary": "Sums integers in the range [a, b), initializing a threading.local() instance to demonstrate thread-local memory before falling back to a plain per-call accumulator.",
+      "tags": ["utility", "thread-target", "thread-local-storage"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/03_multi_threaded_nolock.py",
+      "type": "file",
+      "name": "03_multi_threaded_nolock.py",
+      "filePath": "parallel/03_multi_threaded_nolock.py",
+      "summary": "Demonstrates a race condition by having two threads concurrently mutate shared global state (COMMON_COUNTER and COMMON_LIST) without synchronization, then cross-checks and highlights the resulting inconsistency in red using colorama.",
+      "tags": ["parallel-programming", "threading", "race-condition", "concurrency", "tutorial"],
+      "complexity": "moderate",
+      "languageNotes": "Classic unsynchronized shared-state mutation across threads producing a race condition, verified by comparing COMMON_COUNTER against len(COMMON_LIST)."
+    },
+    {
+      "id": "function:parallel/03_multi_threaded_nolock.py:my_sum_mod",
+      "type": "function",
+      "name": "my_sum_mod",
+      "filePath": "parallel/03_multi_threaded_nolock.py",
+      "lineRange": [7, 29],
+      "summary": "Sums integers in [a, b) while unsynchronized-mutating shared globals COMMON_COUNTER and COMMON_LIST whenever a value is a multiple of m, exposing a race condition across concurrent threads.",
+      "tags": ["thread-target", "race-condition", "global-state"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:parallel/03extra_minimal_race_condition.py",
+      "type": "file",
+      "name": "03extra_minimal_race_condition.py",
+      "filePath": "parallel/03extra_minimal_race_condition.py",
+      "summary": "Minimal reproducible race condition example spawning 10 threads that all increment a shared global counter without locking, typically producing a final value less than the expected 10,000,000 due to lost updates.",
+      "tags": ["parallel-programming", "threading", "race-condition", "concurrency", "tutorial"],
+      "complexity": "simple",
+      "languageNotes": "Compact demonstration that Python's GIL does not make compound operations like `counter += 1` atomic across threads."
+    },
+    {
+      "id": "function:parallel/03extra_minimal_race_condition.py:increment",
+      "type": "function",
+      "name": "increment",
+      "filePath": "parallel/03extra_minimal_race_condition.py",
+      "lineRange": [5, 8],
+      "summary": "Increments a shared global counter max_val times without synchronization, used as the target function for 10 concurrent threads to expose a race condition.",
+      "tags": ["thread-target", "race-condition", "global-state"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:parallel/04_multi_threaded_lock.py",
+      "type": "file",
+      "name": "04_multi_threaded_lock.py",
+      "filePath": "parallel/04_multi_threaded_lock.py",
+      "summary": "Fixes the race condition from the nolock example by wrapping the shared-state mutation of COMMON_COUNTER and COMMON_LIST in a threading.Lock acquire/release pair, guaranteeing consistent results across concurrent threads.",
+      "tags": ["parallel-programming", "threading", "lock", "concurrency", "tutorial"],
+      "complexity": "moderate",
+      "languageNotes": "Demonstrates mutual exclusion via threading.Lock to serialize access to a critical section shared across threads, eliminating the race condition shown in 03_multi_threaded_nolock.py."
+    },
+    {
+      "id": "function:parallel/04_multi_threaded_lock.py:my_sum_mod",
+      "type": "function",
+      "name": "my_sum_mod",
+      "filePath": "parallel/04_multi_threaded_lock.py",
+      "lineRange": [7, 38],
+      "summary": "Sums integers in [a, b) while safely mutating shared globals COMMON_COUNTER and COMMON_LIST inside a lock-protected critical section whenever a value is a multiple of m.",
+      "tags": ["thread-target", "lock", "critical-section", "global-state"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:parallel/00_single_threaded.py",
+      "target": "function:parallel/00_single_threaded.py:my_sum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/00_single_threaded.py",
+      "target": "function:parallel/00_single_threaded.py:my_sum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:parallel/01_multi_threaded.py",
+      "target": "function:parallel/01_multi_threaded.py:my_sum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/01_multi_threaded.py",
+      "target": "function:parallel/01_multi_threaded.py:my_sum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:parallel/02_multi_threaded_local_data.py",
+      "target": "function:parallel/02_multi_threaded_local_data.py:my_sum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/02_multi_threaded_local_data.py",
+      "target": "function:parallel/02_multi_threaded_local_data.py:my_sum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:parallel/03_multi_threaded_nolock.py",
+      "target": "function:parallel/03_multi_threaded_nolock.py:my_sum_mod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/03_multi_threaded_nolock.py",
+      "target": "function:parallel/03_multi_threaded_nolock.py:my_sum_mod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:parallel/03extra_minimal_race_condition.py",
+      "target": "function:parallel/03extra_minimal_race_condition.py:increment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/03extra_minimal_race_condition.py",
+      "target": "function:parallel/03extra_minimal_race_condition.py:increment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:parallel/04_multi_threaded_lock.py",
+      "target": "function:parallel/04_multi_threaded_lock.py:my_sum_mod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:parallel/04_multi_threaded_lock.py",
+      "target": "function:parallel/04_multi_threaded_lock.py:my_sum_mod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:dask/README.md",
+      "target": "service:dask/docker-compose.yml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:dask/README.md",
+      "target": "file:dask/notebooks/Lecture1.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:dask/README.md",
+      "target": "file:dask/notebooks/Lecture2.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:dask/README.md",
+      "target": "file:dask/notebooks/Lecture3.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:kafka/README.md",
+      "target": "service:kafka/docker-compose.yml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:kafka/README.md",
+      "target": "file:kafka/notebooks/Producer.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:kafka/README.md",
+      "target": "file:kafka/notebooks/Consumer.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:kafka/README.md",
+      "target": "file:kafka/notebooks/ConsumerGroup.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:kafka/README.md",
+      "target": "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:mysql/README.md",
+      "target": "service:mysql/docker-compose.yml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:mysql/README.md",
+      "target": "file:mysql/docker/mapd_notebook.Dockerfile",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:mysql/README.md",
+      "target": "file:mysql/notebooks/MySQL.ipynb",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "service:mysql/docker-compose.yml",
+      "target": "file:mysql/docker/mapd_notebook.Dockerfile",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:mysql/docker-compose.yml",
+      "target": "file:mysql/notebooks/MySQL.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:mysql/docker-compose.yml",
+      "target": "file:mysql/notebooks/MySQL_solutions.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:dask/docker-compose.yml",
+      "target": "file:dask/notebooks/Lecture1.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:dask/docker-compose.yml",
+      "target": "file:dask/notebooks/Lecture2.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:dask/docker-compose.yml",
+      "target": "file:dask/notebooks/Lecture3.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:kafka/docker-compose.yml",
+      "target": "file:kafka/notebooks/Producer.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:kafka/docker-compose.yml",
+      "target": "file:kafka/notebooks/Consumer.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:kafka/docker-compose.yml",
+      "target": "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:parallel/04_multi_threaded_lock.py",
+      "target": "file:parallel/03_multi_threaded_nolock.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/03extra_minimal_race_condition.py",
+      "target": "file:parallel/03_multi_threaded_nolock.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/02_multi_threaded_local_data.py",
+      "target": "file:parallel/01_multi_threaded.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:parallel/01_multi_threaded.py",
+      "target": "file:parallel/00_single_threaded.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

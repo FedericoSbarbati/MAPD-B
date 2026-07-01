@@ -1,0 +1,362 @@
+{
+  "name": "MAPD-B",
+  "description": "Hands-on lectures for the Management and Analysis of Physics Datasets - Module B (MAPD-B) course, M.Sc. in Physics of Data, University of Padova (AY 2025-2026). Covers MySQL, parallel programming, Apache Spark, Dask, and Apache Kafka through per-topic Jupyter notebooks, Python scripts, and Docker Compose environments.",
+  "languages": [
+    "dockerfile",
+    "ipynb",
+    "markdown",
+    "python",
+    "yaml"
+  ],
+  "frameworks": [
+    "MySQL",
+    "Apache Spark",
+    "Dask",
+    "Apache Kafka",
+    "Docker",
+    "Docker Compose"
+  ],
+  "files": [
+    {
+      "path": "dask/docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 31,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "dask/notebooks/Lecture1_solutions.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2642,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dask/notebooks/Lecture1.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2567,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dask/notebooks/Lecture2_solutions.ipynb",
+      "language": "ipynb",
+      "sizeLines": 4657,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dask/notebooks/Lecture2.ipynb",
+      "language": "ipynb",
+      "sizeLines": 3503,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dask/notebooks/Lecture3_solutions.ipynb",
+      "language": "ipynb",
+      "sizeLines": 15218,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dask/notebooks/Lecture3.ipynb",
+      "language": "ipynb",
+      "sizeLines": 1191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dask/README.md",
+      "language": "markdown",
+      "sizeLines": 80,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "kafka/docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 44,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "kafka/notebooks/Consumer.ipynb",
+      "language": "ipynb",
+      "sizeLines": 525,
+      "fileCategory": "code"
+    },
+    {
+      "path": "kafka/notebooks/ConsumerGroup.ipynb",
+      "language": "ipynb",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "language": "ipynb",
+      "sizeLines": 420,
+      "fileCategory": "code"
+    },
+    {
+      "path": "kafka/notebooks/Producer.ipynb",
+      "language": "ipynb",
+      "sizeLines": 529,
+      "fileCategory": "code"
+    },
+    {
+      "path": "kafka/README.md",
+      "language": "markdown",
+      "sizeLines": 79,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "mysql/docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 21,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "mysql/docker/mapd_notebook.Dockerfile",
+      "language": "dockerfile",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "mysql/notebooks/MySQL_solutions.ipynb",
+      "language": "ipynb",
+      "sizeLines": 20231,
+      "fileCategory": "code"
+    },
+    {
+      "path": "mysql/notebooks/MySQL.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2786,
+      "fileCategory": "code"
+    },
+    {
+      "path": "mysql/README.md",
+      "language": "markdown",
+      "sizeLines": 54,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "parallel/00_single_threaded.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/01_multi_threaded.py",
+      "language": "python",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/02_multi_threaded_local_data.py",
+      "language": "python",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/03_multi_threaded_nolock.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/03extra_minimal_race_condition.py",
+      "language": "python",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/04_multi_threaded_lock.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/04extra_minimal_race_condition_with_lock.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/05_multi_threaded_pool_lock.py",
+      "language": "python",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/06_multi_threaded_pool_queue.py",
+      "language": "python",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/07_multi_processing.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/08_multi_processing_pool_starmap.py",
+      "language": "python",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/09_multi_processing_pool_starmapasync.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/cpu_intensive_multiprocessing.py",
+      "language": "python",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/cpu_intensive_threading.py",
+      "language": "python",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/cpu_intensive.py",
+      "language": "python",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/io_intensive_multiprocessing.py",
+      "language": "python",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/io_intensive_threading.py",
+      "language": "python",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/io_intensive.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "parallel/README.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 10,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spark/docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 28,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "spark/notebooks/Lecture1_solutions.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2289,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spark/notebooks/Lecture1.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spark/notebooks/Lecture2_solutions.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2746,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spark/notebooks/Lecture2.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2695,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spark/notebooks/Lecture3_solutions.ipynb",
+      "language": "ipynb",
+      "sizeLines": 1281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spark/notebooks/Lecture3.ipynb",
+      "language": "ipynb",
+      "sizeLines": 1935,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spark/notebooks/utils/producer.py",
+      "language": "python",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spark/README.md",
+      "language": "markdown",
+      "sizeLines": 83,
+      "fileCategory": "docs"
+    }
+  ],
+  "totalFiles": 48,
+  "filteredByIgnore": 57,
+  "estimatedComplexity": "moderate",
+  "importMap": {
+    "dask/docker-compose.yml": [],
+    "dask/notebooks/Lecture1_solutions.ipynb": [],
+    "dask/notebooks/Lecture1.ipynb": [],
+    "dask/notebooks/Lecture2_solutions.ipynb": [],
+    "dask/notebooks/Lecture2.ipynb": [],
+    "dask/notebooks/Lecture3_solutions.ipynb": [],
+    "dask/notebooks/Lecture3.ipynb": [],
+    "dask/README.md": [],
+    "kafka/docker-compose.yml": [],
+    "kafka/notebooks/Consumer.ipynb": [],
+    "kafka/notebooks/ConsumerGroup.ipynb": [],
+    "kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb": [],
+    "kafka/notebooks/Producer.ipynb": [],
+    "kafka/README.md": [],
+    "mysql/docker-compose.yml": [],
+    "mysql/docker/mapd_notebook.Dockerfile": [],
+    "mysql/notebooks/MySQL_solutions.ipynb": [],
+    "mysql/notebooks/MySQL.ipynb": [],
+    "mysql/README.md": [],
+    "parallel/00_single_threaded.py": [],
+    "parallel/01_multi_threaded.py": [],
+    "parallel/02_multi_threaded_local_data.py": [],
+    "parallel/03_multi_threaded_nolock.py": [],
+    "parallel/03extra_minimal_race_condition.py": [],
+    "parallel/04_multi_threaded_lock.py": [],
+    "parallel/04extra_minimal_race_condition_with_lock.py": [],
+    "parallel/05_multi_threaded_pool_lock.py": [],
+    "parallel/06_multi_threaded_pool_queue.py": [],
+    "parallel/07_multi_processing.py": [],
+    "parallel/08_multi_processing_pool_starmap.py": [],
+    "parallel/09_multi_processing_pool_starmapasync.py": [],
+    "parallel/cpu_intensive_multiprocessing.py": [],
+    "parallel/cpu_intensive_threading.py": [],
+    "parallel/cpu_intensive.py": [],
+    "parallel/io_intensive_multiprocessing.py": [],
+    "parallel/io_intensive_threading.py": [],
+    "parallel/io_intensive.py": [],
+    "parallel/README.md": [],
+    "README.md": [],
+    "spark/docker-compose.yml": [],
+    "spark/notebooks/Lecture1_solutions.ipynb": [],
+    "spark/notebooks/Lecture1.ipynb": [],
+    "spark/notebooks/Lecture2_solutions.ipynb": [],
+    "spark/notebooks/Lecture2.ipynb": [],
+    "spark/notebooks/Lecture3_solutions.ipynb": [],
+    "spark/notebooks/Lecture3.ipynb": [],
+    "spark/notebooks/utils/producer.py": [],
+    "spark/README.md": []
+  }
+}

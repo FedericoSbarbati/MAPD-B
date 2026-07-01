@@ -1,0 +1,28 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'file:dask/notebooks/Lecture1_solutions.ipynb' has no edges (orphan)",
+    "Node 'file:dask/notebooks/Lecture2_solutions.ipynb' has no edges (orphan)",
+    "Node 'file:dask/notebooks/Lecture3_solutions.ipynb' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 73,
+    "totalEdges": 86,
+    "totalLayers": 6,
+    "tourSteps": 12,
+    "nodeTypes": {
+      "service": 7,
+      "file": 38,
+      "document": 6,
+      "function": 22
+    },
+    "edgeTypes": {
+      "contains": 22,
+      "exports": 6,
+      "documents": 22,
+      "depends_on": 8,
+      "deploys": 11,
+      "related": 17
+    }
+  }
+}

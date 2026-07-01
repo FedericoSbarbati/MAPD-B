@@ -1,0 +1,738 @@
+{
+  "scriptCompleted": true,
+  "entryPointCandidates": [
+    {
+      "id": "document:README.md",
+      "score": 5,
+      "name": "README.md",
+      "summary": "Top-level project README introducing the MAPD-B course hands-on materials and mapping each topic folder (mysql, parallel, spark, dask, kafka) to its subject area."
+    },
+    {
+      "id": "file:parallel/01_multi_threaded.py",
+      "score": 3,
+      "name": "01_multi_threaded.py",
+      "summary": "Demonstrates basic Python multithreading by splitting the same summation workload across two Thread instances running the shared my_sum function concurrently, with start/join semantics explained in comments."
+    },
+    {
+      "id": "file:parallel/02_multi_threaded_local_data.py",
+      "score": 3,
+      "name": "02_multi_threaded_local_data.py",
+      "summary": "Variant of the multithreaded summation example that introduces threading.local() to illustrate (and contrast against) explicit thread-local storage, though the accumulator is still a plain local variable in practice."
+    },
+    {
+      "id": "file:parallel/03extra_minimal_race_condition.py",
+      "score": 3,
+      "name": "03extra_minimal_race_condition.py",
+      "summary": "Minimal reproducible race condition example spawning 10 threads that all increment a shared global counter without locking, typically producing a final value less than the expected 10,000,000 due to lost updates."
+    },
+    {
+      "id": "file:parallel/04_multi_threaded_lock.py",
+      "score": 3,
+      "name": "04_multi_threaded_lock.py",
+      "summary": "Fixes the race condition from the nolock example by wrapping the shared-state mutation of COMMON_COUNTER and COMMON_LIST in a threading.Lock acquire/release pair, guaranteeing consistent results across concurrent threads."
+    }
+  ],
+  "fanInRanking": [
+    {
+      "id": "file:parallel/cpu_intensive.py",
+      "fanIn": 3,
+      "name": "cpu_intensive.py"
+    },
+    {
+      "id": "file:parallel/io_intensive.py",
+      "fanIn": 3,
+      "name": "io_intensive.py"
+    },
+    {
+      "id": "service:spark/docker-compose.yml:spark-master",
+      "fanIn": 3,
+      "name": "spark-master"
+    },
+    {
+      "id": "file:spark/notebooks/Lecture2.ipynb",
+      "fanIn": 3,
+      "name": "Lecture2.ipynb"
+    },
+    {
+      "id": "file:spark/notebooks/Lecture3.ipynb",
+      "fanIn": 3,
+      "name": "Lecture3.ipynb"
+    },
+    {
+      "id": "file:dask/notebooks/Lecture1.ipynb",
+      "fanIn": 2,
+      "name": "Lecture1.ipynb"
+    },
+    {
+      "id": "file:dask/notebooks/Lecture2.ipynb",
+      "fanIn": 2,
+      "name": "Lecture2.ipynb"
+    },
+    {
+      "id": "file:dask/notebooks/Lecture3.ipynb",
+      "fanIn": 2,
+      "name": "Lecture3.ipynb"
+    },
+    {
+      "id": "file:kafka/notebooks/Consumer.ipynb",
+      "fanIn": 2,
+      "name": "Consumer.ipynb"
+    },
+    {
+      "id": "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb",
+      "fanIn": 2,
+      "name": "KafkaSpark_StructuredStreaming.ipynb"
+    },
+    {
+      "id": "file:kafka/notebooks/Producer.ipynb",
+      "fanIn": 2,
+      "name": "Producer.ipynb"
+    },
+    {
+      "id": "file:mysql/docker/mapd_notebook.Dockerfile",
+      "fanIn": 2,
+      "name": "mapd_notebook.Dockerfile"
+    },
+    {
+      "id": "file:mysql/notebooks/MySQL.ipynb",
+      "fanIn": 2,
+      "name": "MySQL.ipynb"
+    },
+    {
+      "id": "function:parallel/00_single_threaded.py:my_sum",
+      "fanIn": 2,
+      "name": "my_sum"
+    },
+    {
+      "id": "function:parallel/01_multi_threaded.py:my_sum",
+      "fanIn": 2,
+      "name": "my_sum"
+    },
+    {
+      "id": "function:parallel/02_multi_threaded_local_data.py:my_sum",
+      "fanIn": 2,
+      "name": "my_sum"
+    },
+    {
+      "id": "file:parallel/03_multi_threaded_nolock.py",
+      "fanIn": 2,
+      "name": "03_multi_threaded_nolock.py"
+    },
+    {
+      "id": "function:parallel/03_multi_threaded_nolock.py:my_sum_mod",
+      "fanIn": 2,
+      "name": "my_sum_mod"
+    },
+    {
+      "id": "function:parallel/03extra_minimal_race_condition.py:increment",
+      "fanIn": 2,
+      "name": "increment"
+    },
+    {
+      "id": "function:parallel/04_multi_threaded_lock.py:my_sum_mod",
+      "fanIn": 2,
+      "name": "my_sum_mod"
+    }
+  ],
+  "fanOutRanking": [
+    {
+      "id": "document:parallel/README.md",
+      "fanOut": 6,
+      "name": "README.md"
+    },
+    {
+      "id": "document:kafka/README.md",
+      "fanOut": 5,
+      "name": "README.md"
+    },
+    {
+      "id": "document:dask/README.md",
+      "fanOut": 4,
+      "name": "README.md"
+    },
+    {
+      "id": "service:spark/docker-compose.yml:jupyter-notebook",
+      "fanOut": 4,
+      "name": "jupyter-notebook"
+    },
+    {
+      "id": "document:spark/README.md",
+      "fanOut": 4,
+      "name": "README.md"
+    },
+    {
+      "id": "service:dask/docker-compose.yml",
+      "fanOut": 3,
+      "name": "docker-compose.yml"
+    },
+    {
+      "id": "service:kafka/docker-compose.yml",
+      "fanOut": 3,
+      "name": "docker-compose.yml"
+    },
+    {
+      "id": "service:mysql/docker-compose.yml",
+      "fanOut": 3,
+      "name": "docker-compose.yml"
+    },
+    {
+      "id": "document:mysql/README.md",
+      "fanOut": 3,
+      "name": "README.md"
+    },
+    {
+      "id": "file:parallel/01_multi_threaded.py",
+      "fanOut": 3,
+      "name": "01_multi_threaded.py"
+    },
+    {
+      "id": "file:parallel/02_multi_threaded_local_data.py",
+      "fanOut": 3,
+      "name": "02_multi_threaded_local_data.py"
+    },
+    {
+      "id": "file:parallel/03extra_minimal_race_condition.py",
+      "fanOut": 3,
+      "name": "03extra_minimal_race_condition.py"
+    },
+    {
+      "id": "file:parallel/04_multi_threaded_lock.py",
+      "fanOut": 3,
+      "name": "04_multi_threaded_lock.py"
+    },
+    {
+      "id": "file:parallel/cpu_intensive_threading.py",
+      "fanOut": 3,
+      "name": "cpu_intensive_threading.py"
+    },
+    {
+      "id": "file:parallel/cpu_intensive_multiprocessing.py",
+      "fanOut": 3,
+      "name": "cpu_intensive_multiprocessing.py"
+    },
+    {
+      "id": "service:spark/docker-compose.yml",
+      "fanOut": 3,
+      "name": "docker-compose.yml"
+    },
+    {
+      "id": "file:parallel/00_single_threaded.py",
+      "fanOut": 2,
+      "name": "00_single_threaded.py"
+    },
+    {
+      "id": "file:parallel/03_multi_threaded_nolock.py",
+      "fanOut": 2,
+      "name": "03_multi_threaded_nolock.py"
+    },
+    {
+      "id": "file:parallel/05_multi_threaded_pool_lock.py",
+      "fanOut": 2,
+      "name": "05_multi_threaded_pool_lock.py"
+    },
+    {
+      "id": "file:parallel/08_multi_processing_pool_starmap.py",
+      "fanOut": 2,
+      "name": "08_multi_processing_pool_starmap.py"
+    }
+  ],
+  "bfsTraversal": {
+    "startNode": "file:parallel/01_multi_threaded.py",
+    "order": [
+      "file:parallel/01_multi_threaded.py"
+    ],
+    "depthMap": {
+      "file:parallel/01_multi_threaded.py": 0
+    },
+    "byDepth": {
+      "0": [
+        "file:parallel/01_multi_threaded.py"
+      ]
+    }
+  },
+  "nonCodeFiles": {
+    "documentation": [
+      {
+        "id": "document:dask/README.md",
+        "name": "README.md",
+        "summary": "Module overview for the Dask lecture series, explaining the Docker Compose based cluster setup (scheduler, workers, Jupyter client), how to scale workers, access the dashboard, and a per-lecture topic outline."
+      },
+      {
+        "id": "document:kafka/README.md",
+        "name": "README.md",
+        "summary": "Module overview for the Kafka lecture, describing the Docker Compose cluster combining Spark master/worker nodes with a Kafka broker and Jupyter client, scaling instructions, dashboard ports, and lecture topic outline (topics, producer/consumer, consumer groups, Spark Structured Streaming ingestion)."
+      },
+      {
+        "id": "document:mysql/README.md",
+        "name": "README.md",
+        "summary": "Module overview for the SQL/MySQL lecture, explaining the two-node Docker Compose setup (MySQL server plus Jupyter client built from mapd_notebook.Dockerfile), startup/shutdown instructions, and prerequisites including downloading the IMDb_pruned.sql dataset."
+      },
+      {
+        "id": "document:parallel/README.md",
+        "name": "README.md",
+        "summary": "Explains the threading and multiprocessing lecture module, covering the Python GIL, installing multiple Python versions via deadsnakes, monitoring CPU usage with htop, and pinning processes to CPUs with taskset."
+      },
+      {
+        "id": "document:README.md",
+        "name": "README.md",
+        "summary": "Top-level project README introducing the MAPD-B course hands-on materials and mapping each topic folder (mysql, parallel, spark, dask, kafka) to its subject area."
+      },
+      {
+        "id": "document:spark/README.md",
+        "name": "README.md",
+        "summary": "Guide for the PySpark module explaining the Docker-based cluster setup (master, worker(s), Jupyter client), how to start/scale/stop the cluster, and a summary of the topics covered in Lectures 1-3 (core Spark, DataFrames, structured streaming)."
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "service:dask/docker-compose.yml",
+        "name": "docker-compose.yml",
+        "type": "service",
+        "summary": "Docker Compose setup for the Dask module defining a scheduler, one or more scalable worker nodes, and a Jupyter notebook client, all pulled from the jpazzini/mapd-b registry and sharing the workspace via a bind mount."
+      },
+      {
+        "id": "service:kafka/docker-compose.yml",
+        "name": "docker-compose.yml",
+        "type": "service",
+        "summary": "Docker Compose setup for the Kafka module combining a Spark master/worker cluster with a single-node Apache Kafka broker (KRaft mode, no Zookeeper) and a Jupyter notebook client for producer/consumer/streaming exercises."
+      },
+      {
+        "id": "service:mysql/docker-compose.yml",
+        "name": "docker-compose.yml",
+        "type": "service",
+        "summary": "Docker Compose setup for the MySQL module, running a MySQL 9.6 database server and a locally-built Jupyter notebook client image (mapd_notebook) sharing the workspace directory."
+      },
+      {
+        "id": "service:spark/docker-compose.yml",
+        "name": "docker-compose.yml",
+        "type": "service",
+        "summary": "Docker Compose configuration standing up a standalone Spark cluster with a spark-master, one or more scalable spark-worker containers, and a Jupyter notebook client, exposing the Spark UI, master port, and notebook interface."
+      },
+      {
+        "id": "service:spark/docker-compose.yml:spark-master",
+        "name": "spark-master",
+        "type": "service",
+        "summary": "Spark cluster master node acting as the head node and resource manager, exposing the Spark master UI on port 8080 and the cluster RPC port 7077."
+      },
+      {
+        "id": "service:spark/docker-compose.yml:spark-worker",
+        "name": "spark-worker",
+        "type": "service",
+        "summary": "Spark worker node that connects to spark-master and provides processing capacity, configurable via SPARK_WORKER_CORES and SPARK_WORKER_MEMORY, and scalable to multiple replicas."
+      },
+      {
+        "id": "service:spark/docker-compose.yml:jupyter-notebook",
+        "name": "jupyter-notebook",
+        "type": "service",
+        "summary": "Jupyter notebook service bundling the Spark client and Python interpreter, exposing the notebook UI on host port 1234 and the Spark application UI on port 4040."
+      }
+    ],
+    "data": [],
+    "config": []
+  },
+  "clusters": [],
+  "layers": {
+    "count": 6,
+    "list": [
+      {
+        "id": "layer:dask-module",
+        "name": "Dask Module",
+        "description": "Self-contained distributed-computing lecture unit covering Dask delayed/futures, bags, and dataframes, packaged with its own Docker Compose scheduler/worker/Jupyter cluster and README."
+      },
+      {
+        "id": "layer:kafka-module",
+        "name": "Kafka Module",
+        "description": "Lecture unit on Kafka producer/consumer APIs, consumer groups, and Kafka-Spark Structured Streaming integration, with its own Docker Compose broker/Spark/Jupyter stack and README."
+      },
+      {
+        "id": "layer:mysql-module",
+        "name": "MySQL Module",
+        "description": "RDBMS/SQL lecture unit teaching MySQL querying against the IMDb dataset, packaged with a custom Jupyter client Dockerfile, a MySQL server Compose stack, and README."
+      },
+      {
+        "id": "layer:spark-module",
+        "name": "Spark Module",
+        "description": "PySpark lecture unit covering RDDs, DataFrames/Spark SQL, and Structured Streaming, packaged with a master/worker/Jupyter Docker Compose cluster, a TCP socket producer utility script, and README."
+      },
+      {
+        "id": "layer:parallel-fundamentals",
+        "name": "Parallel Programming Fundamentals",
+        "description": "Pure-Python, Docker-free lecture unit of standalone scripts progressively teaching threading, race conditions, locks, queues, and multiprocessing, plus CPU-bound vs I/O-bound benchmark comparisons."
+      },
+      {
+        "id": "layer:course-documentation",
+        "name": "Course Documentation",
+        "description": "Top-level entry-point documentation that introduces the MAPD-B course and maps each topic module to its subject area."
+      }
+    ]
+  },
+  "nodeSummaryIndex": {
+    "service:dask/docker-compose.yml": {
+      "name": "docker-compose.yml",
+      "type": "service",
+      "summary": "Docker Compose setup for the Dask module defining a scheduler, one or more scalable worker nodes, and a Jupyter notebook client, all pulled from the jpazzini/mapd-b registry and sharing the workspace via a bind mount."
+    },
+    "file:dask/notebooks/Lecture1_solutions.ipynb": {
+      "name": "Lecture1_solutions.ipynb",
+      "type": "file",
+      "summary": "Worked solutions notebook for Dask Lecture 1, covering connecting to a Dask cluster, basic delayed/submit/map primitives, and exercises such as word count, Fibonacci, and computing pi."
+    },
+    "file:dask/notebooks/Lecture1.ipynb": {
+      "name": "Lecture1.ipynb",
+      "type": "file",
+      "summary": "Introductory notebook on parallel and distributed computing with Dask, covering cluster connection via a scheduler Client, the Dask WebUI dashboard, and simple parallelization patterns for Python functions (delayed, submit, map)."
+    },
+    "file:dask/notebooks/Lecture2_solutions.ipynb": {
+      "name": "Lecture2_solutions.ipynb",
+      "type": "file",
+      "summary": "Worked solutions notebook for Dask Lecture 2, exercising Dask Bag creation and operations such as map, filter, pluck, flatten, groupby, and foldby."
+    },
+    "file:dask/notebooks/Lecture2.ipynb": {
+      "name": "Lecture2.ipynb",
+      "type": "file",
+      "summary": "Notebook introducing Dask data structures (bag, array, dataframe) with a deep dive into Dask Bag creation from Python sequences/files and core operations analogous to PySpark RDDs."
+    },
+    "file:dask/notebooks/Lecture3_solutions.ipynb": {
+      "name": "Lecture3_solutions.ipynb",
+      "type": "file",
+      "summary": "Worked solutions notebook for Dask Lecture 3, the largest notebook in the module, covering Dask DataFrame construction, partitioning, and operations compared to Pandas DataFrames."
+    },
+    "file:dask/notebooks/Lecture3.ipynb": {
+      "name": "Lecture3.ipynb",
+      "type": "file",
+      "summary": "Notebook continuing the Dask data structures topic, focused on the dask.dataframe API, reading multiple CSV files via glob patterns, data partitioning concepts, and differences from Pandas DataFrames."
+    },
+    "document:dask/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Module overview for the Dask lecture series, explaining the Docker Compose based cluster setup (scheduler, workers, Jupyter client), how to scale workers, access the dashboard, and a per-lecture topic outline."
+    },
+    "service:kafka/docker-compose.yml": {
+      "name": "docker-compose.yml",
+      "type": "service",
+      "summary": "Docker Compose setup for the Kafka module combining a Spark master/worker cluster with a single-node Apache Kafka broker (KRaft mode, no Zookeeper) and a Jupyter notebook client for producer/consumer/streaming exercises."
+    },
+    "file:kafka/notebooks/Consumer.ipynb": {
+      "name": "Consumer.ipynb",
+      "type": "file",
+      "summary": "Notebook teaching the Kafka Consumer API via the kafka-python module, covering instantiating a KafkaConsumer, inspecting available topics, and subscribing to topics under the publish/subscribe model."
+    },
+    "file:kafka/notebooks/ConsumerGroup.ipynb": {
+      "name": "ConsumerGroup.ipynb",
+      "type": "file",
+      "summary": "Short notebook demonstrating Kafka consumer groups, showing how multiple consumers coordinate to share partition consumption of a topic."
+    },
+    "file:kafka/notebooks/KafkaSpark_StructuredStreaming.ipynb": {
+      "name": "KafkaSpark_StructuredStreaming.ipynb",
+      "type": "file",
+      "summary": "Notebook integrating Kafka with Spark Structured Streaming, reading a Kafka topic into a streaming DataFrame via readStream/format('kafka') and processing the resulting key/value/timestamp records."
+    },
+    "file:kafka/notebooks/Producer.ipynb": {
+      "name": "Producer.ipynb",
+      "type": "file",
+      "summary": "Notebook teaching Kafka Producer usage, first interacting with the Producer from the shell inside the kafka-broker container, then via Pythonic client APIs to publish data to a topic."
+    },
+    "document:kafka/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Module overview for the Kafka lecture, describing the Docker Compose cluster combining Spark master/worker nodes with a Kafka broker and Jupyter client, scaling instructions, dashboard ports, and lecture topic outline (topics, producer/consumer, consumer groups, Spark Structured Streaming ingestion)."
+    },
+    "service:mysql/docker-compose.yml": {
+      "name": "docker-compose.yml",
+      "type": "service",
+      "summary": "Docker Compose setup for the MySQL module, running a MySQL 9.6 database server and a locally-built Jupyter notebook client image (mapd_notebook) sharing the workspace directory."
+    },
+    "file:mysql/docker/mapd_notebook.Dockerfile": {
+      "name": "mapd_notebook.Dockerfile",
+      "type": "file",
+      "summary": "Dockerfile building the Jupyter notebook client image for the MySQL module on top of python:3.14.2-slim, installing notebook, matplotlib, SQLAlchemy, ipython-sql, mysql-connector-python, and pandas, and launching Jupyter Notebook on port 8888 without a token."
+    },
+    "file:mysql/notebooks/MySQL_solutions.ipynb": {
+      "name": "MySQL_solutions.ipynb",
+      "type": "file",
+      "summary": "Extensive worked solutions notebook for the MySQL/RDBMS module, the largest file in the project, covering connecting to MySQL, running SQL queries via mysql.connector and ipython-sql, and solving exercises against the IMDb dataset."
+    },
+    "file:mysql/notebooks/MySQL.ipynb": {
+      "name": "MySQL.ipynb",
+      "type": "file",
+      "summary": "Introductory notebook on RDBMS concepts using MySQL, covering creating a connection to the MySQL Docker container (interactively and via mysql.connector), running basic SQL commands, and querying the IMDb dataset."
+    },
+    "document:mysql/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Module overview for the SQL/MySQL lecture, explaining the two-node Docker Compose setup (MySQL server plus Jupyter client built from mapd_notebook.Dockerfile), startup/shutdown instructions, and prerequisites including downloading the IMDb_pruned.sql dataset."
+    },
+    "file:parallel/00_single_threaded.py": {
+      "name": "00_single_threaded.py",
+      "type": "file",
+      "summary": "Baseline script that sums a large range of integers single-threaded and times the execution, used as a performance reference point before introducing threading."
+    },
+    "function:parallel/00_single_threaded.py:my_sum": {
+      "name": "my_sum",
+      "type": "function",
+      "summary": "Sums integers in the range [a, b) in a simple loop and prints the result."
+    },
+    "file:parallel/01_multi_threaded.py": {
+      "name": "01_multi_threaded.py",
+      "type": "file",
+      "summary": "Demonstrates basic Python multithreading by splitting the same summation workload across two Thread instances running the shared my_sum function concurrently, with start/join semantics explained in comments."
+    },
+    "function:parallel/01_multi_threaded.py:my_sum": {
+      "name": "my_sum",
+      "type": "function",
+      "summary": "Sums integers in the range [a, b) and prints the result; invoked concurrently by two threads splitting the workload in half."
+    },
+    "file:parallel/02_multi_threaded_local_data.py": {
+      "name": "02_multi_threaded_local_data.py",
+      "type": "file",
+      "summary": "Variant of the multithreaded summation example that introduces threading.local() to illustrate (and contrast against) explicit thread-local storage, though the accumulator is still a plain local variable in practice."
+    },
+    "function:parallel/02_multi_threaded_local_data.py:my_sum": {
+      "name": "my_sum",
+      "type": "function",
+      "summary": "Sums integers in the range [a, b), initializing a threading.local() instance to demonstrate thread-local memory before falling back to a plain per-call accumulator."
+    },
+    "file:parallel/03_multi_threaded_nolock.py": {
+      "name": "03_multi_threaded_nolock.py",
+      "type": "file",
+      "summary": "Demonstrates a race condition by having two threads concurrently mutate shared global state (COMMON_COUNTER and COMMON_LIST) without synchronization, then cross-checks and highlights the resulting inconsistency in red using colorama."
+    },
+    "function:parallel/03_multi_threaded_nolock.py:my_sum_mod": {
+      "name": "my_sum_mod",
+      "type": "function",
+      "summary": "Sums integers in [a, b) while unsynchronized-mutating shared globals COMMON_COUNTER and COMMON_LIST whenever a value is a multiple of m, exposing a race condition across concurrent threads."
+    },
+    "file:parallel/03extra_minimal_race_condition.py": {
+      "name": "03extra_minimal_race_condition.py",
+      "type": "file",
+      "summary": "Minimal reproducible race condition example spawning 10 threads that all increment a shared global counter without locking, typically producing a final value less than the expected 10,000,000 due to lost updates."
+    },
+    "function:parallel/03extra_minimal_race_condition.py:increment": {
+      "name": "increment",
+      "type": "function",
+      "summary": "Increments a shared global counter max_val times without synchronization, used as the target function for 10 concurrent threads to expose a race condition."
+    },
+    "file:parallel/04_multi_threaded_lock.py": {
+      "name": "04_multi_threaded_lock.py",
+      "type": "file",
+      "summary": "Fixes the race condition from the nolock example by wrapping the shared-state mutation of COMMON_COUNTER and COMMON_LIST in a threading.Lock acquire/release pair, guaranteeing consistent results across concurrent threads."
+    },
+    "function:parallel/04_multi_threaded_lock.py:my_sum_mod": {
+      "name": "my_sum_mod",
+      "type": "function",
+      "summary": "Sums integers in [a, b) while safely mutating shared globals COMMON_COUNTER and COMMON_LIST inside a lock-protected critical section whenever a value is a multiple of m."
+    },
+    "file:parallel/04extra_minimal_race_condition_with_lock.py": {
+      "name": "04extra_minimal_race_condition_with_lock.py",
+      "type": "file",
+      "summary": "Minimal demonstration of a race condition fix using threading.Lock, where 10 threads increment a shared global counter safely inside a critical section."
+    },
+    "function:parallel/04extra_minimal_race_condition_with_lock.py:increment": {
+      "name": "increment",
+      "type": "function",
+      "summary": "Increments a shared global counter max_val times, guarding each increment with a lock acquire/release to avoid a race condition."
+    },
+    "file:parallel/05_multi_threaded_pool_lock.py": {
+      "name": "05_multi_threaded_pool_lock.py",
+      "type": "file",
+      "summary": "Demonstrates ThreadPoolExecutor with a shared Lock to safely aggregate a common counter and list while four threads each sum a partition of a large range."
+    },
+    "function:parallel/05_multi_threaded_pool_lock.py:my_sum_mod": {
+      "name": "my_sum_mod",
+      "type": "function",
+      "summary": "Sums integers in [a, b) and, for multiples of m, safely updates a shared counter and list under a lock; returns the partial sum."
+    },
+    "file:parallel/06_multi_threaded_pool_queue.py": {
+      "name": "06_multi_threaded_pool_queue.py",
+      "type": "file",
+      "summary": "Demonstrates ThreadPoolExecutor combined with a thread-safe queue.Queue as an alternative to explicit locking for collecting values found by concurrent worker threads."
+    },
+    "function:parallel/06_multi_threaded_pool_queue.py:my_sum_mod": {
+      "name": "my_sum_mod",
+      "type": "function",
+      "summary": "Sums integers in [a, b) and pushes multiples of m onto a shared thread-safe queue instead of using a lock; returns the partial sum."
+    },
+    "file:parallel/07_multi_processing.py": {
+      "name": "07_multi_processing.py",
+      "type": "file",
+      "summary": "Basic example of true parallelism using multiprocessing.Process, spawning two separate OS processes that each sum half of a large integer range concurrently."
+    },
+    "function:parallel/07_multi_processing.py:my_sum": {
+      "name": "my_sum",
+      "type": "function",
+      "summary": "Sums integers in the range [a, b) and prints the result; used as the target function for each spawned process."
+    },
+    "file:parallel/08_multi_processing_pool_starmap.py": {
+      "name": "08_multi_processing_pool_starmap.py",
+      "type": "file",
+      "summary": "Demonstrates multiprocessing.Pool.starmap to distribute a range-sum computation across 4 worker processes with a blocking call that returns all results at once."
+    },
+    "function:parallel/08_multi_processing_pool_starmap.py:my_sum": {
+      "name": "my_sum",
+      "type": "function",
+      "summary": "Sums integers in the range [a, b), prints, and returns the result; distributed across a process pool via starmap."
+    },
+    "file:parallel/09_multi_processing_pool_starmapasync.py": {
+      "name": "09_multi_processing_pool_starmapasync.py",
+      "type": "file",
+      "summary": "Demonstrates the non-blocking multiprocessing.Pool.starmap_async API, polling readiness in a loop while sub-processes compute partial sums in the background."
+    },
+    "function:parallel/09_multi_processing_pool_starmapasync.py:my_sum": {
+      "name": "my_sum",
+      "type": "function",
+      "summary": "Sums integers in the range [a, b), prints, and returns the result; distributed asynchronously across a process pool via starmap_async."
+    },
+    "file:parallel/cpu_intensive.py": {
+      "name": "cpu_intensive.py",
+      "type": "file",
+      "summary": "Sequential baseline for a CPU-bound Monte Carlo integration benchmark, running 10 chunks of a numerical integration one after another without any concurrency."
+    },
+    "function:parallel/cpu_intensive.py:f": {
+      "name": "f",
+      "type": "function",
+      "summary": "Arbitrary mathematical function sin(1/(x*(2-x)))^2 used as the integrand for the Monte Carlo integration."
+    },
+    "function:parallel/cpu_intensive.py:cpu_function": {
+      "name": "cpu_function",
+      "type": "function",
+      "summary": "Performs a seeded Monte Carlo integration of f(x) over 2 million random samples and returns the hit count and sample size."
+    },
+    "file:parallel/cpu_intensive_threading.py": {
+      "name": "cpu_intensive_threading.py",
+      "type": "file",
+      "summary": "Runs the same CPU-bound Monte Carlo integration as cpu_intensive.py but distributes the 10 chunks across a ThreadPoolExecutor, illustrating that threading provides no speedup for CPU-bound work due to the GIL."
+    },
+    "function:parallel/cpu_intensive_threading.py:f": {
+      "name": "f",
+      "type": "function",
+      "summary": "Arbitrary mathematical function sin(1/(x*(2-x)))^2 used as the integrand for the Monte Carlo integration."
+    },
+    "function:parallel/cpu_intensive_threading.py:cpu_function": {
+      "name": "cpu_function",
+      "type": "function",
+      "summary": "Performs a seeded Monte Carlo integration of f(x) over 2 million random samples and returns the hit count and sample size; submitted as a task to a ThreadPoolExecutor."
+    },
+    "file:parallel/cpu_intensive_multiprocessing.py": {
+      "name": "cpu_intensive_multiprocessing.py",
+      "type": "file",
+      "summary": "Runs the same CPU-bound Monte Carlo integration as cpu_intensive.py but distributes the 10 chunks across separate processes, demonstrating real parallel speedup for CPU-bound work by bypassing the GIL."
+    },
+    "function:parallel/cpu_intensive_multiprocessing.py:f": {
+      "name": "f",
+      "type": "function",
+      "summary": "Arbitrary mathematical function sin(1/(x*(2-x)))^2 used as the integrand for the Monte Carlo integration."
+    },
+    "function:parallel/cpu_intensive_multiprocessing.py:cpu_function": {
+      "name": "cpu_function",
+      "type": "function",
+      "summary": "Performs a seeded Monte Carlo integration of f(x) over 2 million random samples and returns the hit count and sample size; distributed across worker processes."
+    },
+    "file:parallel/io_intensive.py": {
+      "name": "io_intensive.py",
+      "type": "file",
+      "summary": "Sequential baseline for an I/O-bound benchmark that downloads a list of remote image URLs one at a time and saves each to disk under a content-hashed filename."
+    },
+    "function:parallel/io_intensive.py:io_function": {
+      "name": "io_function",
+      "type": "function",
+      "summary": "Fetches a remote file over HTTP, computes an MD5 hash of its content for the filename, and writes the file to the local pics directory."
+    },
+    "file:parallel/io_intensive_threading.py": {
+      "name": "io_intensive_threading.py",
+      "type": "file",
+      "summary": "Runs the same I/O-bound URL-fetching benchmark as io_intensive.py but distributes the downloads across a ThreadPoolExecutor, showing that threading speeds up I/O-bound work because the GIL is released during blocking network calls."
+    },
+    "function:parallel/io_intensive_threading.py:io_function": {
+      "name": "io_function",
+      "type": "function",
+      "summary": "Fetches a remote file over HTTP, computes an MD5 hash of its content for the filename, and writes the file to the local pics directory; submitted as a task to a ThreadPoolExecutor."
+    },
+    "file:parallel/io_intensive_multiprocessing.py": {
+      "name": "io_intensive_multiprocessing.py",
+      "type": "file",
+      "summary": "Runs the same I/O-bound URL-fetching benchmark as io_intensive.py but distributes the downloads across separate processes, used to compare process-based vs thread-based vs sequential I/O concurrency."
+    },
+    "function:parallel/io_intensive_multiprocessing.py:io_function": {
+      "name": "io_function",
+      "type": "function",
+      "summary": "Fetches a remote file over HTTP, computes an MD5 hash of its content for the filename, and writes the file to the local pics directory; distributed across worker processes."
+    },
+    "document:parallel/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Explains the threading and multiprocessing lecture module, covering the Python GIL, installing multiple Python versions via deadsnakes, monitoring CPU usage with htop, and pinning processes to CPUs with taskset."
+    },
+    "document:README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Top-level project README introducing the MAPD-B course hands-on materials and mapping each topic folder (mysql, parallel, spark, dask, kafka) to its subject area."
+    },
+    "service:spark/docker-compose.yml": {
+      "name": "docker-compose.yml",
+      "type": "service",
+      "summary": "Docker Compose configuration standing up a standalone Spark cluster with a spark-master, one or more scalable spark-worker containers, and a Jupyter notebook client, exposing the Spark UI, master port, and notebook interface."
+    },
+    "service:spark/docker-compose.yml:spark-master": {
+      "name": "spark-master",
+      "type": "service",
+      "summary": "Spark cluster master node acting as the head node and resource manager, exposing the Spark master UI on port 8080 and the cluster RPC port 7077."
+    },
+    "service:spark/docker-compose.yml:spark-worker": {
+      "name": "spark-worker",
+      "type": "service",
+      "summary": "Spark worker node that connects to spark-master and provides processing capacity, configurable via SPARK_WORKER_CORES and SPARK_WORKER_MEMORY, and scalable to multiple replicas."
+    },
+    "service:spark/docker-compose.yml:jupyter-notebook": {
+      "name": "jupyter-notebook",
+      "type": "service",
+      "summary": "Jupyter notebook service bundling the Spark client and Python interpreter, exposing the notebook UI on host port 1234 and the Spark application UI on port 4040."
+    },
+    "document:spark/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Guide for the PySpark module explaining the Docker-based cluster setup (master, worker(s), Jupyter client), how to start/scale/stop the cluster, and a summary of the topics covered in Lectures 1-3 (core Spark, DataFrames, structured streaming)."
+    },
+    "file:spark/notebooks/Lecture1.ipynb": {
+      "name": "Lecture1.ipynb",
+      "type": "file",
+      "summary": "Introductory PySpark notebook covering connecting to a Dockerized Spark cluster, creating a Spark Session and Spark Context, basic RDD operations (parallelize, map, reduce), the Spark application Web UI, word count, computing pi via Monte Carlo, and a distributed gradient descent exercise."
+    },
+    "file:spark/notebooks/Lecture1_solutions.ipynb": {
+      "name": "Lecture1_solutions.ipynb",
+      "type": "file",
+      "summary": "Solutions companion to Lecture1.ipynb, providing completed implementations of the Spark Session setup, RDD operations, word count, pi estimation, and distributed gradient descent exercises."
+    },
+    "file:spark/notebooks/Lecture2.ipynb": {
+      "name": "Lecture2.ipynb",
+      "type": "file",
+      "summary": "PySpark DataFrames notebook covering Spark SQL, creating DataFrames from Rows, tuples, and Pandas DataFrames, basic DataFrame operations, and User Defined Functions (UDFs) and Pandas UDFs."
+    },
+    "file:spark/notebooks/Lecture2_solutions.ipynb": {
+      "name": "Lecture2_solutions.ipynb",
+      "type": "file",
+      "summary": "Solutions companion to Lecture2.ipynb, providing completed implementations of DataFrame creation, DataFrame operations, and UDF/PandasUDF exercises."
+    },
+    "file:spark/notebooks/Lecture3.ipynb": {
+      "name": "Lecture3.ipynb",
+      "type": "file",
+      "summary": "Spark Structured Streaming notebook demonstrating stream processing by reading from a TCP socket source (populated by the producer.py script) and applying distributed streaming transformations to the incoming records."
+    },
+    "file:spark/notebooks/Lecture3_solutions.ipynb": {
+      "name": "Lecture3_solutions.ipynb",
+      "type": "file",
+      "summary": "Solutions companion to Lecture3.ipynb, providing completed implementations of the TCP socket streaming source setup and distributed stream processing exercises."
+    },
+    "file:spark/notebooks/utils/producer.py": {
+      "name": "producer.py",
+      "type": "file",
+      "summary": "Standalone TCP socket server that generates randomized fake transaction records (name, surname, amount, delta_t, flag) as JSON lines and streams them to a connected client, used as the data source for the Lecture 3 Structured Streaming exercises."
+    },
+    "function:spark/notebooks/utils/producer.py:send_messages": {
+      "name": "send_messages",
+      "type": "function",
+      "summary": "Continuously generates a random transaction-like JSON message and sends it, newline-terminated, over the given client socket every 0.2 seconds until interrupted or the socket errors out."
+    }
+  },
+  "totalNodes": 73,
+  "totalEdges": 86
+}
